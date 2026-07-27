@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Learn which Dead as Disco mods can be imported and switched safely with Limelight.">
+
+    <title>Mod Compatibility | Limelight Documentation</title>
+
+    <link
+        rel="stylesheet"
+        href="assets/css/styles.css">
+
+    <script
+        src="assets/js/site.js"
+        defer>
+    </script>
+</head>
+
+<body data-page="mod-compatibility">
+    <a
+        class="skip-link"
+        href="#main-content">
+        Skip to documentation
+    </a>
+
+    <div class="site-shell">
+        <!-- I keep the documentation navigation in one predictable place. -->
+        <aside
+            id="documentationSidebar"
+            class="sidebar">
+            <div class="sidebar-brand">
+                <a
+                    class="brand-link"
+                    href="index.html"
+                    aria-label="Limelight documentation home">
+                    <span
+                        class="brand-mark"
+                        aria-hidden="true">
+                        <span class="brand-mark-inner">L</span>
+                    </span>
+
+                    <span class="brand-copy">
+                        <strong>LIMELIGHT</strong>
+                        <small>DOCUMENTATION</small>
+                    </span>
+                </a>
+            </div>
+
+            <nav
+                class="documentation-navigation"
+                aria-label="Documentation">
+                <p class="navigation-label">START HERE</p>
+
+                <a
+                    class="navigation-link"
+                    href="index.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Documentation Home</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="getting-started.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Getting Started</span>
+                </a>
+
+                <a
+                    class="navigation-link active"
+                    aria-current="page"
+                    href="mod-compatibility.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Mod Compatibility</span>
+                </a>
+
+                <p class="navigation-label">LIVE MODDING</p>
+
+                <a
+                    class="navigation-link"
+                    href="live-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Live Loader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="profiles.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Profiles</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="x19-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>X19 LLoader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="nexus-mods.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Nexus Mods</span>
+                </a>
+
+                <p class="navigation-label">SUPPORT</p>
+
+                <a
+                    class="navigation-link"
+                    href="testing-bug-reports.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Testing &amp; Bug Reports</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="troubleshooting.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Troubleshooting</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="privacy.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Privacy</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-status">
+                <span class="status-dot" aria-hidden="true"></span>
+
+                <div>
+                    <strong>PRIVATE TEST DOCS</strong>
+                    <span>Documentation is still being prepared.</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page-column">
+            <header class="topbar">
+                <button
+                    id="menuToggle"
+                    class="menu-button"
+                    type="button"
+                    aria-label="Open documentation navigation"
+                    aria-controls="documentationSidebar"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="topbar-title">
+                    <span class="topbar-diamond" aria-hidden="true"></span>
+                    <strong>LIMELIGHT</strong>
+                    <span>/</span>
+                    <span>DEAD AS DISCO MOD MANAGER</span>
+                </div>
+
+                <a
+                    class="topbar-link"
+                    href="https://github.com/Henreh1/Limelight"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    VIEW ON GITHUB
+                </a>
+            </header>
+
+            <main
+                id="main-content"
+                class="documentation-page">
+                <div class="breadcrumbs">
+                    <a href="index.html">DOCUMENTATION</a>
+                    <span>/</span>
+                    <span>MOD COMPATIBILITY</span>
+                </div>
+
+                <header class="documentation-hero">
+                    <span class="eyebrow">MOD COMPATIBILITY</span>
+
+                    <h1>KNOW WHAT CAN TAKE THE STAGE</h1>
+
+                    <p>
+                        Limelight validates every imported archive before it
+                        reaches your library. This guide explains the package
+                        formats it accepts and what makes a mod suitable for
+                        live switching.
+                    </p>
+                </header>
+
+                <div class="article-layout">
+                    <article class="article">
+                        <section
+                            id="archive-format"
+                            class="guide-section">
+                            <h2>Archive Format</h2>
+
+                            <p>
+                                Import the complete mod as a ZIP archive.
+                                Limelight inspects the archive before extracting
+                                it and blocks paths that could write outside its
+                                private mod library.
+                            </p>
+
+                            <ul class="guide-list">
+                                <li>The selected file must use the <span class="inline-code">.zip</span> format.</li>
+                                <li>The archive must contain at least one <span class="inline-code">.pak</span> file.</li>
+                                <li>IoStore mods must include matching <span class="inline-code">.utoc</span> and <span class="inline-code">.ucas</span> files.</li>
+                                <li>An accompanying <span class="inline-code">.sig</span> file is accepted when the mod provides one.</li>
+                            </ul>
+
+                            <div class="notice">
+                                <strong>KEEP THE SET TOGETHER</strong>
+
+                                <p>
+                                    Do not remove files from an IoStore mod before
+                                    importing it. Its PAK, UTOC, and UCAS files work
+                                    together as one container set.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section
+                            id="best-fit"
+                            class="guide-section">
+                            <h2>Best Fit for Limelight</h2>
+
+                            <p>
+                                Limelight is designed primarily for Dead as Disco
+                                replacement mods. Character packages are the main
+                                focus, but the asset manifest can also include the
+                                supporting content that gives a replacement its
+                                complete appearance.
+                            </p>
+
+                            <div class="step-list">
+                                <div class="guide-step">
+                                    <span class="step-number">01</span>
+
+                                    <div>
+                                        <h3>Character assets</h3>
+
+                                        <p>
+                                            Skeletal meshes, skeletons, physics
+                                            assets, animation blueprints, materials,
+                                            and textures used by the player model.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">02</span>
+
+                                    <div>
+                                        <h3>Presentation assets</h3>
+
+                                        <p>
+                                            Character portraits and other packaged
+                                            interface images that the replacement
+                                            intentionally overrides.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">03</span>
+
+                                    <div>
+                                        <h3>Localisation assets</h3>
+
+                                        <p>
+                                            String tables and related packaged data
+                                            used to replace the displayed character
+                                            name or supporting text.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section
+                            id="live-switching"
+                            class="guide-section">
+                            <h2>Importing and Live Switching Are Different</h2>
+
+                            <p>
+                                A mod can pass Limelight's archive validation and
+                                still contain assets that Unreal Engine cannot
+                                safely refresh in the middle of a running level.
+                                Import compatibility confirms that the package set
+                                is complete. Live-switch compatibility depends on
+                                the assets inside it and the current game state.
+                            </p>
+
+                            <ul class="guide-list">
+                                <li>Replacement assets should target paths already used by Dead as Disco.</li>
+                                <li>The mod should be made for the connected version of the game.</li>
+                                <li>Switch only when Limelight reports that the game state is safe.</li>
+                                <li>Wait for the in-game indicator to finish before requesting another switch.</li>
+                                <li>Restart the game if Limelight marks the live session as interrupted.</li>
+                            </ul>
+
+                            <div class="notice notice-warning">
+                                <strong>LEVEL CHANGES ARE TEMPORARILY LOCKED</strong>
+
+                                <p>
+                                    Unreal tears down and recreates objects during a
+                                    level transition. Limelight blocks activation at
+                                    that point to avoid unsafe reloads and crash dumps.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section
+                            id="not-managed"
+                            class="guide-section">
+                            <h2>Content Limelight Does Not Manage</h2>
+
+                            <p>
+                                Limelight's importer keeps supported Unreal package
+                                files. A mod that depends on separate programs or
+                                unmanaged files may require instructions from its
+                                author and should not be assumed to support live
+                                switching.
+                            </p>
+
+                            <ul class="guide-list">
+                                <li>Standalone executables or installers</li>
+                                <li>Unrelated DLL injection packages</li>
+                                <li>Loose files that are not part of the Unreal container set</li>
+                                <li>Gameplay or logic mods that require their own loader</li>
+                                <li>Packages made for a different Dead as Disco build</li>
+                            </ul>
+                        </section>
+
+                        <section
+                            id="test-checklist"
+                            class="guide-section">
+                            <h2>Quick Compatibility Checklist</h2>
+
+                            <div class="step-list">
+                                <div class="guide-step">
+                                    <span class="step-number">01</span>
+
+                                    <div>
+                                        <h3>Import while the game is closed</h3>
+
+                                        <p>
+                                            Confirm that Limelight accepts the ZIP
+                                            and lists the expected package files.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">02</span>
+
+                                    <div>
+                                        <h3>Test from a fresh launch</h3>
+
+                                        <p>
+                                            Activate the mod, launch through
+                                            Limelight, and check its mesh, materials,
+                                            textures, portrait, and displayed name.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">03</span>
+
+                                    <div>
+                                        <h3>Test a safe live switch</h3>
+
+                                        <p>
+                                            Enter a stable level, wait until loading
+                                            has finished, and switch once. Confirm the
+                                            complete replacement before testing again.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section
+                            id="next-step"
+                            class="guide-section">
+                            <h2>Need Help With a Mod?</h2>
+
+                            <p>
+                                If a package imports but does not appear correctly,
+                                the troubleshooting guide explains which Limelight
+                                status and diagnostic details to check next.
+                            </p>
+
+                            <a
+                                class="next-page-card"
+                                href="troubleshooting.html">
+                                <span>
+                                    <small>NEXT GUIDE</small>
+                                    <strong>Troubleshooting Limelight</strong>
+                                </span>
+
+                                <span
+                                    class="next-page-arrow"
+                                    aria-hidden="true">
+                                    &rarr;
+                                </span>
+                            </a>
+                        </section>
+                    </article>
+
+                    <aside
+                        class="table-of-contents"
+                        aria-label="On this page">
+                        <strong>ON THIS PAGE</strong>
+
+                        <a href="#archive-format">Archive Format</a>
+                        <a href="#best-fit">Best Fit</a>
+                        <a href="#live-switching">Live Switching</a>
+                        <a href="#not-managed">Not Managed</a>
+                        <a href="#test-checklist">Test Checklist</a>
+                        <a href="#next-step">Next Step</a>
+                    </aside>
+                </div>
+            </main>
+
+            <footer class="site-footer">
+                <div>
+                    <strong>LIMELIGHT</strong>
+                    <span>Made by Henreh</span>
+                </div>
+
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="troubleshooting.html">Support</a>
+                    <a href="https://github.com/Henreh1" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

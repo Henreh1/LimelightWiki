@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Learn how to test Limelight and create a useful, private bug report with its built-in reporting tools.">
+
+    <title>Testing &amp; Bug Reports | Limelight Documentation</title>
+
+    <link
+        rel="stylesheet"
+        href="assets/css/styles.css">
+
+    <script
+        src="assets/js/site.js"
+        defer>
+    </script>
+</head>
+
+<body data-page="testing-bug-reports">
+    <a
+        class="skip-link"
+        href="#main-content">
+        Skip to documentation
+    </a>
+
+    <div class="site-shell">
+        <!-- I keep the documentation navigation in one predictable place. -->
+        <aside
+            id="documentationSidebar"
+            class="sidebar">
+            <div class="sidebar-brand">
+                <a
+                    class="brand-link"
+                    href="index.html"
+                    aria-label="Limelight documentation home">
+                    <span
+                        class="brand-mark"
+                        aria-hidden="true">
+                        <span class="brand-mark-inner">L</span>
+                    </span>
+
+                    <span class="brand-copy">
+                        <strong>LIMELIGHT</strong>
+                        <small>DOCUMENTATION</small>
+                    </span>
+                </a>
+            </div>
+
+            <nav
+                class="documentation-navigation"
+                aria-label="Documentation">
+                <p class="navigation-label">START HERE</p>
+
+                <a
+                    class="navigation-link"
+                    href="index.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Documentation Home</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="getting-started.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Getting Started</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="mod-compatibility.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Mod Compatibility</span>
+                </a>
+
+                <p class="navigation-label">LIVE MODDING</p>
+
+                <a
+                    class="navigation-link"
+                    href="live-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Live Loader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="profiles.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Profiles</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="x19-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>X19 LLoader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="nexus-mods.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Nexus Mods</span>
+                </a>
+
+                <p class="navigation-label">SUPPORT</p>
+
+                <a
+                    class="navigation-link active"
+                    aria-current="page"
+                    href="testing-bug-reports.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Testing &amp; Bug Reports</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="troubleshooting.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Troubleshooting</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="privacy.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Privacy</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-status">
+                <span class="status-dot" aria-hidden="true"></span>
+
+                <div>
+                    <strong>PRIVATE TEST DOCS</strong>
+                    <span>Documentation is still being prepared.</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page-column">
+            <header class="topbar">
+                <button
+                    id="menuToggle"
+                    class="menu-button"
+                    type="button"
+                    aria-label="Open documentation navigation"
+                    aria-controls="documentationSidebar"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="topbar-title">
+                    <span class="topbar-diamond" aria-hidden="true"></span>
+                    <strong>LIMELIGHT</strong>
+                    <span>/</span>
+                    <span>DEAD AS DISCO MOD MANAGER</span>
+                </div>
+
+                <a
+                    class="topbar-link"
+                    href="https://github.com/Henreh1/Limelight"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    VIEW ON GITHUB
+                </a>
+            </header>
+
+            <main
+                id="main-content"
+                class="documentation-page">
+                <div class="breadcrumbs">
+                    <a href="index.html">DOCUMENTATION</a>
+                    <span>/</span>
+                    <span>TESTING &amp; BUG REPORTS</span>
+                </div>
+
+                <header class="documentation-hero">
+                    <span class="eyebrow">PRIVATE TESTING</span>
+
+                    <h1>TURN A PROBLEM INTO A USEFUL REPORT</h1>
+
+                    <p>
+                        A clear report gives Limelight the exact scene, actions,
+                        and diagnostics needed to reproduce a problem. The built-in
+                        report creator collects the technical context while you
+                        explain what happened.
+                    </p>
+                </header>
+
+                <div class="article-layout">
+                    <article class="article">
+                        <section
+                            id="before-testing"
+                            class="guide-section">
+                            <h2>Before You Test</h2>
+
+                            <p>
+                                Start from a known state so the result describes one
+                                issue instead of several overlapping changes.
+                            </p>
+
+                            <ul class="guide-list">
+                                <li>Use the newest private test build you were given.</li>
+                                <li>Confirm Limelight accepts the connected Dead as Disco build.</li>
+                                <li>Write down the mod name and selected loader mode.</li>
+                                <li>Wait for loading screens and Limelight indicators to finish before switching.</li>
+                                <li>Test one change at a time whenever possible.</li>
+                            </ul>
+
+                            <div class="notice notice-warning">
+                                <strong>DO NOT REPEAT AN UNSAFE ACTION</strong>
+
+                                <p>
+                                    If Dead as Disco freezes, closes, creates a crash
+                                    dump, or Limelight marks the session as interrupted,
+                                    stop testing that action. Preserve the evidence and
+                                    restart before trying anything else.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section
+                            id="create-report"
+                            class="guide-section">
+                            <h2>Create a Private Test Report</h2>
+
+                            <p>
+                                Limelight already has a guided report creator. Open
+                                <span class="inline-code">Settings</span>, choose
+                                <span class="inline-code">Support</span>, then select
+                                <span class="inline-code">Create Private Test Report</span>.
+                            </p>
+
+                            <figure class="documentation-image">
+                                <button
+                                    class="documentation-image-button"
+                                    type="button"
+                                    data-lightbox
+                                    data-lightbox-caption="Limelight's Support settings contain the private report and recovery tools."
+                                    aria-label="Enlarge the Support settings screenshot">
+                                    <img
+                                        src="assets/images/testing-support-settings.png"
+                                        alt="Limelight Support settings showing compatibility information and the Create Test Report button"
+                                        loading="lazy">
+
+                                    <span
+                                        class="documentation-image-action"
+                                        aria-hidden="true">
+                                        VIEW FULL SIZE
+                                    </span>
+                                </button>
+
+                                <figcaption>
+                                    <strong>SETTINGS / SUPPORT</strong>
+                                    Select Create Test Report to begin a guided report.
+                                </figcaption>
+                            </figure>
+
+                            <div class="step-list">
+                                <div class="guide-step">
+                                    <span class="step-number">01</span>
+
+                                    <div>
+                                        <h3>Name the issue</h3>
+
+                                        <p>
+                                            Use a short title that describes the broken
+                                            action and result, such as "Fuji textures turn
+                                            black after the second X19 switch".
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">02</span>
+
+                                    <div>
+                                        <h3>Choose the area and outcome</h3>
+
+                                        <p>
+                                            Select the closest Limelight feature, then
+                                            record whether there was no crash, a dump,
+                                            a closed application, or a freeze.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">03</span>
+
+                                    <div>
+                                        <h3>Describe the exact sequence</h3>
+
+                                        <p>
+                                            List each click, key press, loader selection,
+                                            mod selection, and game location in order.
+                                            Include the result you expected and the result
+                                            you actually saw.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">04</span>
+
+                                    <div>
+                                        <h3>Add useful evidence</h3>
+
+                                        <p>
+                                            Add screenshots, logs, or crash dumps that
+                                            belong to this issue. Limelight accepts up to
+                                            ten selected files.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">05</span>
+
+                                    <div>
+                                        <h3>Create and review the ZIP</h3>
+
+                                        <p>
+                                            Select Create Report ZIP, choose where to save
+                                            it, and review the contents before sending it
+                                            to the person coordinating the private test.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <figure class="documentation-image">
+                                <button
+                                    class="documentation-image-button"
+                                    type="button"
+                                    data-lightbox
+                                    data-lightbox-caption="The private test report keeps the tester's notes and optional evidence together."
+                                    aria-label="Enlarge the Private Test Report screenshot">
+                                    <img
+                                        src="assets/images/testing-private-report.png"
+                                        alt="Limelight Private Test Report window filled with a humorous demonstration issue"
+                                        loading="lazy">
+
+                                    <span
+                                        class="documentation-image-action"
+                                        aria-hidden="true">
+                                        VIEW FULL SIZE
+                                    </span>
+                                </button>
+
+                                <figcaption>
+                                    <strong>PRIVATE TEST REPORT</strong>
+                                    Complete the required fields, then add only the
+                                    evidence that helps reproduce the problem.
+                                </figcaption>
+                            </figure>
+                        </section>
+
+                        <section
+                            id="good-report"
+                            class="guide-section">
+                            <h2>What a Good Report Looks Like</h2>
+
+                            <p>
+                                Someone who did not watch the test should be able to
+                                follow your notes and reach the same result.
+                            </p>
+
+                            <div class="code-block">ISSUE TITLE
+Fuji textures turn black after the second X19 switch
+
+STEPS TO REPRODUCE
+1. Launch Dead as Disco through Limelight with X19 LLoader.
+2. Enter the bar and wait until the level is fully visible.
+3. Switch from Haru Urara to Fuji Kiseki.
+4. Wait for the Limelight indicator to disappear.
+5. Switch to Manhattan Cafe, then back to Fuji Kiseki.
+
+EXPECTED RESULT
+Fuji Kiseki loads with her mesh, materials, and textures.
+
+WHAT ACTUALLY HAPPENED
+The mesh changed, but the body and hair appeared black.</div>
+
+                            <div class="notice">
+                                <strong>SMALL DETAILS ARE USEFUL</strong>
+
+                                <p>
+                                    Include whether the problem happened on first launch,
+                                    after a level change, only in X19 mode, or only with a
+                                    particular ordering of mods.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section
+                            id="evidence"
+                            class="guide-section">
+                            <h2>Evidence You Can Include</h2>
+
+                            <p>
+                                The report creator accepts common images, crash dumps,
+                                and text-based diagnostic files. It renames attachments
+                                inside the ZIP so their original folder paths are not used
+                                as archive names.
+                            </p>
+
+                            <ul class="guide-list">
+                                <li>Images: PNG, JPG, JPEG, and WEBP</li>
+                                <li>Crash dumps: DMP</li>
+                                <li>Logs and text: LOG and TXT</li>
+                                <li>Structured text: JSON, XML, and CSV</li>
+                                <li>Configuration files: INI and CFG</li>
+                            </ul>
+
+                            <p>
+                                Choose the smallest set of files that proves the issue.
+                                One clear screenshot and the matching log are more useful
+                                than a folder full of unrelated files.
+                            </p>
+
+                            <div class="notice notice-warning">
+                                <strong>REVIEW BINARY EVIDENCE</strong>
+
+                                <p>
+                                    Limelight sanitises supported text attachments, but
+                                    screenshots and crash dumps are binary files and may
+                                    contain technical or personal data. Include them only
+                                    when you are comfortable sharing them with the tester.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section
+                            id="automatic-diagnostics"
+                            class="guide-section">
+                            <h2>What Limelight Adds Automatically</h2>
+
+                            <p>
+                                You do not need to copy system details by hand. The
+                                generated report records the context Limelight already
+                                knows about the current test.
+                            </p>
+
+                            <ul class="guide-list">
+                                <li>Limelight, Windows, and .NET versions</li>
+                                <li>Selected Live Loader mode</li>
+                                <li>Current and peak Limelight memory use</li>
+                                <li>Connected game and compatibility status</li>
+                                <li>Installed and active mod information</li>
+                                <li>Live Loader installation and bridge status</li>
+                                <li>Live-session switches, containers, staging, and recovery details</li>
+                                <li>Recent UE4SS events when they can be read</li>
+                            </ul>
+
+                            <p>
+                                The generated text replaces saved user names, installation
+                                paths, and the stored Nexus API key with private labels.
+                            </p>
+                        </section>
+
+                        <section
+                            id="privacy"
+                            class="guide-section">
+                            <h2>Privacy and Sending the Report</h2>
+
+                            <p>
+                                Creating a report only saves a ZIP on your computer.
+                                Limelight does not upload it automatically. You decide
+                                whether to send it and which evidence to include.
+                            </p>
+
+                            <ol class="guide-list">
+                                <li>Open the generated ZIP and confirm it belongs to the issue you tested.</li>
+                                <li>Review any screenshot or crash dump you selected.</li>
+                                <li>Send the complete ZIP through the private testing channel you were given.</li>
+                                <li>Create a separate report for a separate problem.</li>
+                            </ol>
+
+                            <p>
+                                Read the <a href="privacy.html">Privacy guide</a> for a
+                                fuller explanation of Limelight's local data and report
+                                handling.
+                            </p>
+                        </section>
+
+                        <section
+                            id="severity"
+                            class="guide-section">
+                            <h2>Describe the Impact Clearly</h2>
+
+                            <ul class="guide-list">
+                                <li><strong>Blocker:</strong> Dead as Disco or Limelight cannot be started, or user data may be lost.</li>
+                                <li><strong>High:</strong> A repeatable hard freeze, application close, or crash dump interrupts normal use.</li>
+                                <li><strong>Medium:</strong> A feature fails, but the game and manager remain usable.</li>
+                                <li><strong>Low:</strong> A visual, wording, spacing, or polish issue does not block the feature.</li>
+                            </ul>
+
+                            <p>
+                                The outcome selected in Limelight is the most important
+                                signal. Add a severity word to your title only when it
+                                makes the report easier to triage.
+                            </p>
+                        </section>
+
+                        <section
+                            id="next-step"
+                            class="guide-section">
+                            <h2>Try Safe Recovery First</h2>
+
+                            <p>
+                                If you want to keep testing after saving the report,
+                                follow the recovery checklist before starting a fresh
+                                session.
+                            </p>
+
+                            <a
+                                class="next-page-card"
+                                href="troubleshooting.html">
+                                <span>
+                                    <small>NEXT GUIDE</small>
+                                    <strong>Troubleshooting Limelight</strong>
+                                </span>
+
+                                <span
+                                    class="next-page-arrow"
+                                    aria-hidden="true">
+                                    &rarr;
+                                </span>
+                            </a>
+                        </section>
+                    </article>
+
+                    <aside
+                        class="table-of-contents"
+                        aria-label="On this page">
+                        <strong>ON THIS PAGE</strong>
+
+                        <a href="#before-testing">Before You Test</a>
+                        <a href="#create-report">Create a Report</a>
+                        <a href="#good-report">Good Report Example</a>
+                        <a href="#evidence">Evidence</a>
+                        <a href="#automatic-diagnostics">Automatic Diagnostics</a>
+                        <a href="#privacy">Privacy and Sending</a>
+                        <a href="#severity">Describe the Impact</a>
+                        <a href="#next-step">Next Step</a>
+                    </aside>
+                </div>
+            </main>
+
+            <footer class="site-footer">
+                <div>
+                    <strong>LIMELIGHT</strong>
+                    <span>Made by Henreh</span>
+                </div>
+
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="troubleshooting.html">Support</a>
+                    <a href="https://github.com/Henreh1" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Create reusable character profiles in Limelight and use complete profile groups with the X19 LLoader.">
+
+    <title>Profiles | Limelight Documentation</title>
+
+    <link
+        rel="stylesheet"
+        href="assets/css/styles.css">
+
+    <script
+        src="assets/js/site.js"
+        defer>
+    </script>
+</head>
+
+<body data-page="profiles">
+    <a
+        class="skip-link"
+        href="#main-content">
+        Skip to documentation
+    </a>
+
+    <div class="site-shell">
+        <!-- I keep the documentation navigation in one predictable place. -->
+        <aside
+            id="documentationSidebar"
+            class="sidebar">
+            <div class="sidebar-brand">
+                <a
+                    class="brand-link"
+                    href="index.html"
+                    aria-label="Limelight documentation home">
+                    <span
+                        class="brand-mark"
+                        aria-hidden="true">
+                        <span class="brand-mark-inner">L</span>
+                    </span>
+
+                    <span class="brand-copy">
+                        <strong>LIMELIGHT</strong>
+                        <small>DOCUMENTATION</small>
+                    </span>
+                </a>
+            </div>
+
+            <nav
+                class="documentation-navigation"
+                aria-label="Documentation">
+                <p class="navigation-label">START HERE</p>
+
+                <a
+                    class="navigation-link"
+                    href="index.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Documentation Home</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="getting-started.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Getting Started</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="mod-compatibility.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Mod Compatibility</span>
+                </a>
+
+                <p class="navigation-label">LIVE MODDING</p>
+
+                <a
+                    class="navigation-link"
+                    href="live-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Live Loader</span>
+                </a>
+
+                <a
+                    class="navigation-link active"
+                    aria-current="page"
+                    href="profiles.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Profiles</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="x19-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>X19 LLoader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="nexus-mods.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Nexus Mods</span>
+                </a>
+
+                <p class="navigation-label">SUPPORT</p>
+
+                <a
+                    class="navigation-link"
+                    href="testing-bug-reports.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Testing &amp; Bug Reports</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="troubleshooting.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Troubleshooting</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="privacy.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Privacy</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-status">
+                <span class="status-dot" aria-hidden="true"></span>
+
+                <div>
+                    <strong>PRIVATE TEST DOCS</strong>
+                    <span>Documentation is still being prepared.</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page-column">
+            <header class="topbar">
+                <button
+                    id="menuToggle"
+                    class="menu-button"
+                    type="button"
+                    aria-label="Open documentation navigation"
+                    aria-controls="documentationSidebar"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="topbar-title">
+                    <span class="topbar-diamond" aria-hidden="true"></span>
+                    <strong>LIMELIGHT</strong>
+                    <span>/</span>
+                    <span>DEAD AS DISCO MOD MANAGER</span>
+                </div>
+
+                <a
+                    class="topbar-link"
+                    href="https://github.com/Henreh1/Limelight"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    VIEW ON GITHUB
+                </a>
+            </header>
+
+            <main
+                id="main-content"
+                class="documentation-page">
+                <div class="breadcrumbs">
+                    <a href="index.html">DOCUMENTATION</a>
+                    <span>/</span>
+                    <span>PROFILES</span>
+                </div>
+
+                <header class="documentation-hero">
+                    <span class="eyebrow">REUSABLE CHARACTER CASTS</span>
+
+                    <h1>BUILD YOUR PROFILES</h1>
+
+                    <p>
+                        Organise installed character mods into named casts, edit
+                        them whenever your library changes, and send a complete
+                        profile to X19 without rebuilding the rotation by hand.
+                    </p>
+                </header>
+
+                <div class="article-layout">
+                    <article class="article">
+                        <section
+                            id="overview"
+                            class="guide-section">
+                            <h2>What Is a Profile?</h2>
+
+                            <p>
+                                A profile is a saved group of installed character
+                                mods. It is useful for keeping themed casts,
+                                favourites, or a regular X19 rotation together.
+                            </p>
+
+                            <p>
+                                Profiles only remember which installed mods belong
+                                to the group. They do not copy, move, or reinstall
+                                the mod files, so the same character can safely
+                                appear in more than one profile.
+                            </p>
+
+                            <div class="notice">
+                                <strong>YOUR MOD LIBRARY STAYS IN CONTROL</strong>
+
+                                <p>
+                                    Deleting a profile does not delete its character
+                                    mods. Removing a mod from Limelight removes the
+                                    unavailable entry when the profile is next edited.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section
+                            id="create-profile"
+                            class="guide-section">
+                            <h2>Create a Profile</h2>
+
+                            <div class="step-list">
+                                <div class="guide-step">
+                                    <span class="step-number">01</span>
+
+                                    <div>
+                                        <h3>Open Profiles</h3>
+
+                                        <p>
+                                            Select Profiles from Limelight's main
+                                            navigation to open the profile library.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">02</span>
+
+                                    <div>
+                                        <h3>Name the cast</h3>
+
+                                        <p>
+                                            Choose a short, recognisable name such as
+                                            Favourites, Uma, or Stream Night.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">03</span>
+
+                                    <div>
+                                        <h3>Select the characters</h3>
+
+                                        <p>
+                                            Choose every installed character that
+                                            belongs to this reusable group.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">04</span>
+
+                                    <div>
+                                        <h3>Save the profile</h3>
+
+                                        <p>
+                                            Limelight creates a compact profile card
+                                            and keeps the group between launches.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section
+                            id="profile-library"
+                            class="guide-section">
+                            <h2>Use the Profile Library</h2>
+
+                            <p>
+                                Saved profiles appear as compact cards, similar to
+                                files in an explorer. Each card shows its name,
+                                character count, and a short monogram.
+                            </p>
+
+                            <ul class="guide-list">
+                                <li>A one-word name uses its first three letters where they fit.</li>
+                                <li>A multi-word name uses up to three initials.</li>
+                                <li>Select Open to enter the full profile editor.</li>
+                                <li>The editor contains the rename, membership, X19, and delete controls.</li>
+                            </ul>
+
+                            <p>
+                                This keeps the main profile library tidy even when
+                                several casts have been created.
+                            </p>
+                        </section>
+
+                        <section
+                            id="edit-profile"
+                            class="guide-section">
+                            <h2>Edit or Delete a Profile</h2>
+
+                            <p>
+                                Open a profile card to change its name or character
+                                selection. Save Changes commits the new version.
+                            </p>
+
+                            <p>
+                                Use the back control to return to the profile library.
+                                If the selection has not been saved, the stored profile
+                                remains unchanged.
+                            </p>
+
+                            <div class="notice notice-warning">
+                                <strong>DELETING A PROFILE</strong>
+
+                                <p>
+                                    Delete removes the saved group only. Installed mods
+                                    remain in My Mods and can be added to another profile.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section
+                            id="x19-profiles"
+                            class="guide-section">
+                            <h2>Use Profiles with X19</h2>
+
+                            <p>
+                                Profiles can fill an X19 rotation in two ways. Set as
+                                X19 from the profile editor replaces the current
+                                rotation with that profile's available characters.
+                            </p>
+
+                            <p>
+                                You can also select one or more profile groups from the
+                                Live Loaders page. Limelight combines the selected
+                                groups into the final rotation and removes duplicates.
+                            </p>
+
+                            <div class="notice">
+                                <strong>NO DOUBLE SELECTIONS</strong>
+
+                                <p>
+                                    While a profile is selected for X19, its characters
+                                    are hidden from the individual mod selector. Removing
+                                    the profile returns those characters to the selector.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section
+                            id="profile-changes"
+                            class="guide-section">
+                            <h2>When Your Library Changes</h2>
+
+                            <p>
+                                Profiles refer to Limelight's installed mod entries. If
+                                a character is renamed, the profile follows that mod and
+                                shows the new display name. If it is removed, Limelight
+                                skips it rather than creating a broken X19 entry.
+                            </p>
+
+                            <p>
+                                Open and save the profile after making large library
+                                changes so its membership reflects the cast you want.
+                            </p>
+                        </section>
+
+                        <section
+                            id="next-step"
+                            class="guide-section">
+                            <h2>Your Next Step</h2>
+
+                            <p>
+                                With a profile ready, configure its order, shuffle mode,
+                                and keyboard or controller input through X19 LLoader.
+                            </p>
+
+                            <a
+                                class="next-page-card"
+                                href="x19-loader.html">
+                                <span>
+                                    <small>NEXT GUIDE</small>
+                                    <strong>Configure X19 LLoader</strong>
+                                </span>
+
+                                <span
+                                    class="next-page-arrow"
+                                    aria-hidden="true">
+                                    &rarr;
+                                </span>
+                            </a>
+                        </section>
+                    </article>
+
+                    <aside
+                        class="table-of-contents"
+                        aria-label="On this page">
+                        <strong>ON THIS PAGE</strong>
+
+                        <a href="#overview">What Is a Profile?</a>
+                        <a href="#create-profile">Create a Profile</a>
+                        <a href="#profile-library">Profile Library</a>
+                        <a href="#edit-profile">Edit or Delete</a>
+                        <a href="#x19-profiles">Use with X19</a>
+                        <a href="#profile-changes">Library Changes</a>
+                        <a href="#next-step">Next Step</a>
+                    </aside>
+                </div>
+            </main>
+
+            <footer class="site-footer">
+                <div>
+                    <strong>LIMELIGHT</strong>
+                    <span>Made by Henreh</span>
+                </div>
+
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="troubleshooting.html">Support</a>
+                    <a href="https://github.com/Henreh1" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

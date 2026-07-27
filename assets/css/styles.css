@@ -275,7 +275,8 @@ button {
     transform: translateX(2px);
 }
 
-.navigation-link.active {
+.navigation-link.active,
+.navigation-link[aria-current="page"] {
     color: #ffffff;
     border-color: rgba(255, 47, 163, 0.2);
     background:
@@ -287,7 +288,8 @@ button {
         var(--panel-raised);
 }
 
-.navigation-link.active::before {
+.navigation-link.active::before,
+.navigation-link[aria-current="page"]::before {
     opacity: 1;
     transform: scaleY(1);
 }
@@ -309,7 +311,8 @@ button {
     border-color: var(--cyan);
 }
 
-.navigation-link.active .navigation-diamond {
+.navigation-link.active .navigation-diamond,
+.navigation-link[aria-current="page"] .navigation-diamond {
     border-color: var(--pink);
     background: var(--pink);
 }
@@ -1422,6 +1425,149 @@ button {
     font-size: 28px;
 }
 
+.documentation-image {
+    margin: 27px 0;
+}
+
+.documentation-image-button {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--border-bright);
+    border-radius: var(--medium-radius);
+    background: var(--panel);
+    cursor: zoom-in;
+    transition:
+        border-color var(--fast-transition),
+        box-shadow var(--fast-transition),
+        transform var(--fast-transition);
+}
+
+.documentation-image-button:hover {
+    border-color: var(--pink);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+    transform: translateY(-2px);
+}
+
+.documentation-image-button:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 4px;
+}
+
+.documentation-image-button img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.documentation-image-action {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    padding: 8px 11px;
+    border: 1px solid rgba(49, 221, 248, 0.28);
+    border-radius: 7px;
+    color: var(--cyan);
+    background: rgba(7, 9, 22, 0.9);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.documentation-image figcaption {
+    padding: 11px 4px 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.documentation-image figcaption strong {
+    margin-right: 7px;
+    color: var(--pink);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+}
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+.image-lightbox {
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    place-items: center;
+    gap: 16px;
+    padding: 64px 32px 28px;
+    background: rgba(4, 5, 15, 0.94);
+    animation: lightbox-fade-in 160ms ease-out;
+}
+
+.image-lightbox img {
+    display: block;
+    max-width: 96vw;
+    max-height: 88vh;
+    border: 1px solid var(--border-bright);
+    border-radius: var(--medium-radius);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
+    object-fit: contain;
+}
+
+.image-lightbox-caption {
+    max-width: 900px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.55;
+    text-align: center;
+}
+
+.image-lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid var(--border-bright);
+    border-radius: 10px;
+    color: var(--text);
+    background: var(--panel-raised);
+    cursor: pointer;
+    font-size: 23px;
+    line-height: 1;
+    transition:
+        color var(--fast-transition),
+        border-color var(--fast-transition),
+        background var(--fast-transition);
+}
+
+.image-lightbox-close:hover {
+    color: var(--pink);
+    border-color: var(--pink);
+    background: var(--pink-soft);
+}
+
+.image-lightbox-close:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+}
+
+@keyframes lightbox-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 @media (max-width: 1000px) {
     .article-layout {
         grid-template-columns: 1fr;
@@ -1446,5 +1592,14 @@ button {
 
     .next-page-card {
         align-items: flex-start;
+    }
+
+    .image-lightbox {
+        padding: 58px 14px 20px;
+    }
+
+    .documentation-image-action {
+        right: 8px;
+        bottom: 8px;
     }
 }

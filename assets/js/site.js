@@ -4,6 +4,10 @@ const body = document.body;
 const sidebar = document.getElementById("documentationSidebar");
 const menuToggle = document.getElementById("menuToggle");
 const navigationLinks = document.querySelectorAll(".navigation-link");
+const lightboxTriggers = document.querySelectorAll("[data-lightbox]");
+
+let activeLightbox = null;
+let lightboxReturnFocus = null;
 
 function setSidebarOpen(isOpen) {
     body.classList.toggle("sidebar-open", isOpen);
@@ -24,21 +28,98 @@ function setSidebarOpen(isOpen) {
 }
 
 function updateActiveNavigationLink() {
-    const currentFile =
-        window.location.pathname.split("/").pop() ||
-        "index.html";
+    const currentPage = body.dataset.page || "home";
+
+    const pageByFile = {
+        "index.html": "home",
+        "getting-started.html": "getting-started",
+        "mod-compatibility.html": "mod-compatibility",
+        "live-loader.html": "live-loader",
+        "profiles.html": "profiles",
+        "x19-loader.html": "x19-loader",
+        "nexus-mods.html": "nexus-mods",
+        "testing-bug-reports.html": "testing-bug-reports",
+        "troubleshooting.html": "troubleshooting",
+        "privacy.html": "privacy"
+    };
 
     navigationLinks.forEach(link => {
         const linkFile = link
             .getAttribute("href")
+            ?.split("#")[0]
+            ?.split("?")[0]
             ?.split("/")
             .pop();
 
-        link.classList.toggle(
-            "active",
-            linkFile === currentFile
-        );
+        const isCurrentPage =
+            pageByFile[linkFile] === currentPage;
+
+        link.classList.toggle("active", isCurrentPage);
+
+        if (isCurrentPage) {
+            link.setAttribute("aria-current", "page");
+        } else {
+            link.removeAttribute("aria-current");
+        }
     });
+}
+
+function closeLightbox() {
+    if (!activeLightbox) {
+        return;
+    }
+
+    activeLightbox.remove();
+    activeLightbox = null;
+    body.classList.remove("lightbox-open");
+
+    lightboxReturnFocus?.focus();
+    lightboxReturnFocus = null;
+}
+
+function openLightbox(trigger) {
+    const sourceImage = trigger.querySelector("img");
+
+    if (!sourceImage) {
+        return;
+    }
+
+    lightboxReturnFocus = trigger;
+
+    const overlay = document.createElement("div");
+    overlay.className = "image-lightbox";
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-label", "Enlarged documentation screenshot");
+
+    const image = document.createElement("img");
+    image.src = sourceImage.currentSrc || sourceImage.src;
+    image.alt = sourceImage.alt;
+
+    const caption = document.createElement("p");
+    caption.className = "image-lightbox-caption";
+    caption.textContent = trigger.dataset.lightboxCaption || sourceImage.alt;
+
+    const closeButton = document.createElement("button");
+    closeButton.className = "image-lightbox-close";
+    closeButton.type = "button";
+    closeButton.setAttribute("aria-label", "Close enlarged screenshot");
+    closeButton.textContent = "\u00d7";
+
+    closeButton.addEventListener("click", closeLightbox);
+
+    overlay.addEventListener("click", event => {
+        if (event.target === overlay) {
+            closeLightbox();
+        }
+    });
+
+    overlay.append(image, caption, closeButton);
+    document.body.append(overlay);
+
+    activeLightbox = overlay;
+    body.classList.add("lightbox-open");
+    closeButton.focus();
 }
 
 if (menuToggle && sidebar) {
@@ -90,6 +171,18 @@ if (menuToggle && sidebar) {
         }
     });
 }
+
+lightboxTriggers.forEach(trigger => {
+    trigger.addEventListener("click", () => {
+        openLightbox(trigger);
+    });
+});
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && activeLightbox) {
+        closeLightbox();
+    }
+});
 
 // I calculate this from the current file so copied page layouts stay accurate.
 updateActiveNavigationLink();
