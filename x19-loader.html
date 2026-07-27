@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Official documentation for Limelight, the Dead as Disco mod manager and live loader.">
+
+    <title>X19 LLoader | Limelight Documentation</title>
+
+    <link
+        rel="stylesheet"
+        href="assets/css/styles.css">
+
+    <script
+        src="assets/js/site.js"
+        defer>
+    </script>
+</head>
+
+<body data-page="x19-loader">
+    <a
+        class="skip-link"
+        href="#main-content">
+        Skip to documentation
+    </a>
+
+    <div class="site-shell">
+        <!-- I keep the documentation navigation in one predictable place. -->
+        <aside
+            id="documentationSidebar"
+            class="sidebar">
+            <div class="sidebar-brand">
+                <a
+                    class="brand-link"
+                    href="index.html"
+                    aria-label="Limelight documentation home">
+                    <span
+                        class="brand-mark"
+                        aria-hidden="true">
+                        <span class="brand-mark-inner">L</span>
+                    </span>
+
+                    <span class="brand-copy">
+                        <strong>LIMELIGHT</strong>
+                        <small>DOCUMENTATION</small>
+                    </span>
+                </a>
+            </div>
+
+            <nav
+                class="documentation-navigation"
+                aria-label="Documentation">
+                <p class="navigation-label">START HERE</p>
+
+                <a
+                    class="navigation-link active"
+                    href="index.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Documentation Home</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="getting-started.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Getting Started</span>
+                </a>
+
+                <p class="navigation-label">LIVE MODDING</p>
+
+                <a
+                    class="navigation-link"
+                    href="live-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Live Loader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="x19-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>X19 LLoader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="nexus-mods.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Nexus Mods</span>
+                </a>
+
+                <p class="navigation-label">SUPPORT</p>
+
+                <a
+                    class="navigation-link"
+                    href="troubleshooting.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Troubleshooting</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="privacy.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Privacy</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-status">
+                <span class="status-dot" aria-hidden="true"></span>
+
+                <div>
+                    <strong>PRIVATE TEST DOCS</strong>
+                    <span>Documentation is still being prepared.</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page-column">
+            <header class="topbar">
+                <button
+                    id="menuToggle"
+                    class="menu-button"
+                    type="button"
+                    aria-label="Open documentation navigation"
+                    aria-controls="documentationSidebar"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="topbar-title">
+                    <span class="topbar-diamond" aria-hidden="true"></span>
+                    <strong>LIMELIGHT</strong>
+                    <span>/</span>
+                    <span>DEAD AS DISCO MOD MANAGER</span>
+                </div>
+
+                <a
+                    class="topbar-link"
+                    href="https://github.com/Henreh1/Limelight"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    VIEW ON GITHUB
+                </a>
+            </header>
+
+          <main
+    id="main-content"
+    class="documentation-page">
+    <div class="breadcrumbs">
+        <a href="index.html">DOCUMENTATION</a>
+        <span>/</span>
+        <span>X19 LLOADER</span>
+    </div>
+
+    <header class="documentation-hero">
+        <span class="eyebrow">RAPID CHARACTER ROTATION</span>
+
+        <h1>THE X19 LLOADER</h1>
+
+        <p>
+            Build a custom group of character mods and rotate between them
+            from inside Dead as Disco using a keyboard or controller button.
+        </p>
+    </header>
+
+    <div class="article-layout">
+        <article class="article">
+            <section
+                id="overview"
+                class="guide-section">
+                <h2>What Is X19?</h2>
+
+                <p>
+                    X19 LLoader is Limelight's rapid switching mode. It uses the
+                    same managed Live Loader while adding a configurable group,
+                    an in-game hotkey, ordering controls, and shuffle mode.
+                </p>
+
+                <p>
+                    Once configured, you can move through your selected
+                    characters without returning to the Limelight window after
+                    every switch.
+                </p>
+
+                <div class="notice">
+                    <strong>DEAD AS DISCO ONLY</strong>
+
+                    <p>
+                        The X19 hotkey is listened for only while Dead as Disco
+                        is the active application. It should not trigger switches
+                        while you are using another program.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="create-group"
+                class="guide-section">
+                <h2>Create an X19 Group</h2>
+
+                <div class="step-list">
+                    <div class="guide-step">
+                        <span class="step-number">01</span>
+
+                        <div>
+                            <h3>Open Live Loaders</h3>
+
+                            <p>
+                                Select Live Loaders from Limelight's main
+                                navigation, then locate the X19 LLoader section.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">02</span>
+
+                        <div>
+                            <h3>Select your characters</h3>
+
+                            <p>
+                                Add the installed character mods you want to
+                                include in the rotation group.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">03</span>
+
+                        <div>
+                            <h3>Arrange the group</h3>
+
+                            <p>
+                                Drag the selected mods into your preferred order.
+                                This order is used when shuffle mode is disabled.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">04</span>
+
+                        <div>
+                            <h3>Save your selection</h3>
+
+                            <p>
+                                Limelight stores the group and restores it the
+                                next time the application is opened.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notice notice-warning">
+                    <strong>AN X19 GROUP IS REQUIRED</strong>
+
+                    <p>
+                        If X19 is selected while its group is empty, Limelight
+                        will ask you to return to Live Loaders and select at
+                        least one mod.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="ordering"
+                class="guide-section">
+                <h2>Ordered and Shuffle Modes</h2>
+
+                <h3>Ordered Mode</h3>
+
+                <p>
+                    Ordered mode follows the sequence shown in the X19 group.
+                    Each successful hotkey press advances to the next character,
+                    then returns to the beginning after reaching the end.
+                </p>
+
+                <h3>Shuffle Mode</h3>
+
+                <p>
+                    Shuffle mode chooses the next character from the configured
+                    group rather than following its visible order. Your group
+                    membership is preserved, so shuffle mode can be enabled or
+                    disabled without rebuilding the list.
+                </p>
+            </section>
+
+            <section
+                id="keybind"
+                class="guide-section">
+                <h2>Choose a Keybind</h2>
+
+                <p>
+                    The X19 input can be changed directly from the Live Loaders
+                    page. Select the change control button, then press the
+                    keyboard key or controller button you want to use.
+                </p>
+
+                <ul class="guide-list">
+                    <li>Use a key that Dead as Disco does not already require.</li>
+                    <li>Avoid controls used for pausing or opening menus.</li>
+                    <li>Controller input is supported.</li>
+                    <li>The chosen control is saved with Limelight's settings.</li>
+                    <li>The hotkey is ignored while Dead as Disco is not focused.</li>
+                </ul>
+
+                <div class="notice">
+                    <strong>INPUT SAFETY</strong>
+
+                    <p>
+                        Limelight ignores the X19 control while another switch
+                        is running, during its cooldown, or while Unreal is in an
+                        unsafe transition state.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="launch"
+                class="guide-section">
+                <h2>Launch with X19</h2>
+
+                <div class="step-list">
+                    <div class="guide-step">
+                        <span class="step-number">01</span>
+
+                        <div>
+                            <h3>Select Launch Game</h3>
+
+                            <p>
+                                Start from Limelight's Dashboard after confirming
+                                that your X19 group contains the desired mods.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">02</span>
+
+                        <div>
+                            <h3>Select X19 LLoader</h3>
+
+                            <p>
+                                Limelight prepares the managed loader, starts the
+                                game, and connects the native bridge.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">03</span>
+
+                        <div>
+                            <h3>Wait for initialisation</h3>
+
+                            <p>
+                                The in-game Limelight overlay remains visible
+                                while the initial asset scan and mounting bridge
+                                are being prepared.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">04</span>
+
+                        <div>
+                            <h3>Use your chosen control</h3>
+
+                            <p>
+                                Once the session is online and the level is
+                                stable, press your configured control to request
+                                the next character.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                id="indicator"
+                class="guide-section">
+                <h2>The In-Game Indicator</h2>
+
+                <p>
+                    X19 uses a small Limelight indicator so the switching
+                    process does not cover the action. The indicator pulses
+                    while Limelight is working.
+                </p>
+
+                <p>
+                    Do not request another character until the indicator has
+                    finished. Some mods contain more assets than others, so
+                    switching time can vary.
+                </p>
+            </section>
+
+            <section
+                id="blocked-switches"
+                class="guide-section">
+                <h2>Why a Switch May Be Blocked</h2>
+
+                <p>
+                    Limelight may ignore or reject an X19 request when:
+                </p>
+
+                <ul class="guide-list">
+                    <li>The game is loading or changing levels.</li>
+                    <li>The previous switch has not finished.</li>
+                    <li>The short input cooldown is still active.</li>
+                    <li>The Live Loader bridge is offline.</li>
+                    <li>Dead as Disco is not the focused application.</li>
+                    <li>The selected mod is missing or no longer installed.</li>
+                    <li>The current session needs recovery.</li>
+                </ul>
+
+                <div class="notice notice-warning">
+                    <strong>WAIT FOR A STABLE LEVEL</strong>
+
+                    <p>
+                        If a request is blocked during a transition, wait until
+                        the new level is fully visible before pressing the
+                        control again.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="next-step"
+                class="guide-section">
+                <h2>Your Next Step</h2>
+
+                <p>
+                    Limelight can also browse the Dead as Disco catalogue on
+                    Nexus Mods and inspect available files from inside the
+                    application.
+                </p>
+
+                <a
+                    class="next-page-card"
+                    href="nexus-mods.html">
+                    <span>
+                        <small>NEXT GUIDE</small>
+                        <strong>Using Nexus Mods</strong>
+                    </span>
+
+                    <span
+                        class="next-page-arrow"
+                        aria-hidden="true">
+                        →
+                    </span>
+                </a>
+            </section>
+        </article>
+
+        <aside
+            class="table-of-contents"
+            aria-label="On this page">
+            <strong>ON THIS PAGE</strong>
+
+            <a href="#overview">What Is X19?</a>
+            <a href="#create-group">Create a Group</a>
+            <a href="#ordering">Ordering and Shuffle</a>
+            <a href="#keybind">Choose a Keybind</a>
+            <a href="#launch">Launch with X19</a>
+            <a href="#indicator">In-Game Indicator</a>
+            <a href="#blocked-switches">Blocked Switches</a>
+            <a href="#next-step">Next Step</a>
+        </aside>
+    </div>
+</main>
+
+            <footer class="site-footer">
+                <div>
+                    <strong>LIMELIGHT</strong>
+                    <span>Made by Henreh</span>
+                </div>
+
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="troubleshooting.html">Support</a>
+                    <a href="https://github.com/Henreh1" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

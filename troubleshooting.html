@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Official documentation for Limelight, the Dead as Disco mod manager and live loader.">
+
+    <title>Troubleshooting | Limelight Documentation</title>
+
+    <link
+        rel="stylesheet"
+        href="assets/css/styles.css">
+
+    <script
+        src="assets/js/site.js"
+        defer>
+    </script>
+</head>
+
+<body data-page="troubleshooting">
+    <a
+        class="skip-link"
+        href="#main-content">
+        Skip to documentation
+    </a>
+
+    <div class="site-shell">
+        <!-- I keep the documentation navigation in one predictable place. -->
+        <aside
+            id="documentationSidebar"
+            class="sidebar">
+            <div class="sidebar-brand">
+                <a
+                    class="brand-link"
+                    href="index.html"
+                    aria-label="Limelight documentation home">
+                    <span
+                        class="brand-mark"
+                        aria-hidden="true">
+                        <span class="brand-mark-inner">L</span>
+                    </span>
+
+                    <span class="brand-copy">
+                        <strong>LIMELIGHT</strong>
+                        <small>DOCUMENTATION</small>
+                    </span>
+                </a>
+            </div>
+
+            <nav
+                class="documentation-navigation"
+                aria-label="Documentation">
+                <p class="navigation-label">START HERE</p>
+
+                <a
+                    class="navigation-link active"
+                    href="index.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Documentation Home</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="getting-started.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Getting Started</span>
+                </a>
+
+                <p class="navigation-label">LIVE MODDING</p>
+
+                <a
+                    class="navigation-link"
+                    href="live-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Live Loader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="x19-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>X19 LLoader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="nexus-mods.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Nexus Mods</span>
+                </a>
+
+                <p class="navigation-label">SUPPORT</p>
+
+                <a
+                    class="navigation-link"
+                    href="troubleshooting.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Troubleshooting</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="privacy.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Privacy</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-status">
+                <span class="status-dot" aria-hidden="true"></span>
+
+                <div>
+                    <strong>PRIVATE TEST DOCS</strong>
+                    <span>Documentation is still being prepared.</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page-column">
+            <header class="topbar">
+                <button
+                    id="menuToggle"
+                    class="menu-button"
+                    type="button"
+                    aria-label="Open documentation navigation"
+                    aria-controls="documentationSidebar"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="topbar-title">
+                    <span class="topbar-diamond" aria-hidden="true"></span>
+                    <strong>LIMELIGHT</strong>
+                    <span>/</span>
+                    <span>DEAD AS DISCO MOD MANAGER</span>
+                </div>
+
+                <a
+                    class="topbar-link"
+                    href="https://github.com/Henreh1/Limelight"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    VIEW ON GITHUB
+                </a>
+            </header>
+
+          <main
+    id="main-content"
+    class="documentation-page">
+    <div class="breadcrumbs">
+        <a href="index.html">DOCUMENTATION</a>
+        <span>/</span>
+        <span>TROUBLESHOOTING</span>
+    </div>
+
+    <header class="documentation-hero">
+        <span class="eyebrow">RECOVERY AND SUPPORT</span>
+
+        <h1>KEEP THE SHOW RUNNING</h1>
+
+        <p>
+            Follow these safe recovery steps when Limelight cannot connect,
+            import a mod, initialise the Live Loader, or complete a switch.
+        </p>
+    </header>
+
+    <div class="article-layout">
+        <article class="article">
+            <section
+                id="quick-recovery"
+                class="guide-section">
+                <h2>Quick Recovery Checklist</h2>
+
+                <p>
+                    Most testing problems can be resolved without reinstalling
+                    Dead as Disco or deleting your mod library.
+                </p>
+
+                <div class="step-list">
+                    <div class="guide-step">
+                        <span class="step-number">01</span>
+
+                        <div>
+                            <h3>Close Dead as Disco</h3>
+
+                            <p>
+                                Wait until the game process has completely
+                                disappeared before repairing loader files or
+                                clearing a live session.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">02</span>
+
+                        <div>
+                            <h3>Restart Limelight</h3>
+
+                            <p>
+                                Reopening Limelight clears temporary application
+                                state and lets it inspect the previous session.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">03</span>
+
+                        <div>
+                            <h3>Check the connected game</h3>
+
+                            <p>
+                                Open Settings and confirm that the selected
+                                directory is the main Dead as Disco folder.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">04</span>
+
+                        <div>
+                            <h3>Use Repair Live Loader</h3>
+
+                            <p>
+                                Open Settings, select Support, and run Repair
+                                Live Loader while the game is closed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">05</span>
+
+                        <div>
+                            <h3>Launch through Limelight</h3>
+
+                            <p>
+                                Start a fresh managed session and wait for the
+                                in-game initialisation overlay to finish.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                id="game-directory"
+                class="guide-section">
+                <h2>Game Directory Is Not Accepted</h2>
+
+                <p>
+                    Select the main Dead as Disco installation directory, not
+                    one of its internal folders.
+                </p>
+
+                <div class="code-block">D:\SteamLibrary\steamapps\common\Dead as Disco</div>
+
+                <p>
+                    The selected directory should contain the
+                    <span class="inline-code">Pagoda</span> folder. Do not select
+                    Pagoda, Binaries, Win64, Paks, or the executable itself.
+                </p>
+
+                <p>
+                    If the correct directory is rejected, verify Dead as Disco
+                    through Steam and confirm that the installed build is
+                    supported by the current Limelight version.
+                </p>
+            </section>
+
+            <section
+                id="loader-offline"
+                class="guide-section">
+                <h2>Live Loader Is Offline</h2>
+
+                <ul class="guide-list">
+                    <li>Confirm the game was launched through Limelight.</li>
+                    <li>Confirm that a Live Loader mode was selected.</li>
+                    <li>Keep Limelight open while the game starts.</li>
+                    <li>Wait for the initialisation overlay to complete.</li>
+                    <li>Close the game before using Repair Live Loader.</li>
+                </ul>
+
+                <div class="notice">
+                    <strong>NO LIVE LOADER MODE</strong>
+
+                    <p>
+                        If you deliberately selected No Live Loader, an offline
+                        loader status is expected. The game can still be played,
+                        but live switching will not be available.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="initialisation"
+                class="guide-section">
+                <h2>Initialisation Does Not Finish</h2>
+
+                <p>
+                    The first startup scan can take longer than later launches.
+                    Limelight waits for UE4SS, the Lua bridge, the native bridge,
+                    and Unreal's object system before enabling switching.
+                </p>
+
+                <p>
+                    If the game reaches a playable level but the initialisation
+                    overlay eventually reports a failure:
+                </p>
+
+                <ol class="guide-list">
+                    <li>Close Dead as Disco completely.</li>
+                    <li>Open Limelight's Support settings.</li>
+                    <li>Select Repair Live Loader.</li>
+                    <li>Wait for the repair to finish.</li>
+                    <li>Launch the game through Limelight again.</li>
+               
+
+            <footer class="site-footer">
+                <div>
+                    <strong>LIMELIGHT</strong>
+                    <span>Made by Henreh</span>
+                </div>
+
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="troubleshooting.html">Support</a>
+                    <a href="https://github.com/Henreh1" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

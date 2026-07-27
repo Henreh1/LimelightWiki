@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Official documentation for Limelight, the Dead as Disco mod manager and live loader.">
+
+    <title>Nexus Mods | Limelight Documentation</title>
+
+    <link
+        rel="stylesheet"
+        href="assets/css/styles.css">
+
+    <script
+        src="assets/js/site.js"
+        defer>
+    </script>
+</head>
+
+<body data-page="nexus-mods">
+    <a
+        class="skip-link"
+        href="#main-content">
+        Skip to documentation
+    </a>
+
+    <div class="site-shell">
+        <!-- I keep the documentation navigation in one predictable place. -->
+        <aside
+            id="documentationSidebar"
+            class="sidebar">
+            <div class="sidebar-brand">
+                <a
+                    class="brand-link"
+                    href="index.html"
+                    aria-label="Limelight documentation home">
+                    <span
+                        class="brand-mark"
+                        aria-hidden="true">
+                        <span class="brand-mark-inner">L</span>
+                    </span>
+
+                    <span class="brand-copy">
+                        <strong>LIMELIGHT</strong>
+                        <small>DOCUMENTATION</small>
+                    </span>
+                </a>
+            </div>
+
+            <nav
+                class="documentation-navigation"
+                aria-label="Documentation">
+                <p class="navigation-label">START HERE</p>
+
+                <a
+                    class="navigation-link active"
+                    href="index.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Documentation Home</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="getting-started.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Getting Started</span>
+                </a>
+
+                <p class="navigation-label">LIVE MODDING</p>
+
+                <a
+                    class="navigation-link"
+                    href="live-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Live Loader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="x19-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>X19 LLoader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="nexus-mods.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Nexus Mods</span>
+                </a>
+
+                <p class="navigation-label">SUPPORT</p>
+
+                <a
+                    class="navigation-link"
+                    href="troubleshooting.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Troubleshooting</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="privacy.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Privacy</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-status">
+                <span class="status-dot" aria-hidden="true"></span>
+
+                <div>
+                    <strong>PRIVATE TEST DOCS</strong>
+                    <span>Documentation is still being prepared.</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page-column">
+            <header class="topbar">
+                <button
+                    id="menuToggle"
+                    class="menu-button"
+                    type="button"
+                    aria-label="Open documentation navigation"
+                    aria-controls="documentationSidebar"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="topbar-title">
+                    <span class="topbar-diamond" aria-hidden="true"></span>
+                    <strong>LIMELIGHT</strong>
+                    <span>/</span>
+                    <span>DEAD AS DISCO MOD MANAGER</span>
+                </div>
+
+                <a
+                    class="topbar-link"
+                    href="https://github.com/Henreh1/Limelight"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    VIEW ON GITHUB
+                </a>
+            </header>
+
+          <main
+    id="main-content"
+    class="documentation-page">
+    <div class="breadcrumbs">
+        <a href="index.html">DOCUMENTATION</a>
+        <span>/</span>
+        <span>NEXUS MODS</span>
+    </div>
+
+    <header class="documentation-hero">
+        <span class="eyebrow">BUILT-IN MOD DISCOVERY</span>
+
+        <h1>NEXUS MODS</h1>
+
+        <p>
+            Browse the Dead as Disco catalogue, inspect mod descriptions,
+            view images and files, and manage downloads without leaving
+            Limelight.
+        </p>
+    </header>
+
+    <div class="article-layout">
+        <article class="article">
+            <section
+                id="testing-access"
+                class="guide-section">
+                <h2>Private Testing Access</h2>
+
+                <p>
+                    Limelight's private test builds currently use a personal
+                    Nexus Mods API key. This allows the Nexus integration to be
+                    developed and tested before Limelight receives its public
+                    registered application flow.
+                </p>
+
+                <div class="notice notice-warning">
+                    <strong>PRIVATE TESTING ONLY</strong>
+
+                    <p>
+                        Do not distribute your personal API key. The public
+                        Limelight release will not expect ordinary users to
+                        create or paste personal API keys.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="connect-account"
+                class="guide-section">
+                <h2>Connect a Nexus Account</h2>
+
+                <div class="step-list">
+                    <div class="guide-step">
+                        <span class="step-number">01</span>
+
+                        <div>
+                            <h3>Open Settings</h3>
+
+                            <p>
+                                Select Settings from the Limelight sidebar, then
+                                open the Nexus Mods category.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">02</span>
+
+                        <div>
+                            <h3>Enter the testing API key</h3>
+
+                            <p>
+                                Paste the personal API key created through your
+                                Nexus Mods account settings.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">03</span>
+
+                        <div>
+                            <h3>Select Connect</h3>
+
+                            <p>
+                                Limelight validates the key and displays the
+                                connected Nexus Mods username when the request
+                                succeeds.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notice">
+                    <strong>CREDENTIAL PRIVACY</strong>
+
+                    <p>
+                        Limelight stores the key for the current Windows account
+                        and does not include it in exported diagnostic reports.
+                        Selecting Disconnect removes the saved connection.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="browse"
+                class="guide-section">
+                <h2>Browse the Catalogue</h2>
+
+                <p>
+                    Open Browse Nexus from the main navigation. Limelight loads
+                    the Dead as Disco catalogue into pages so the complete
+                    collection can be explored without rendering every result
+                    at once.
+                </p>
+
+                <h3>Search</h3>
+
+                <p>
+                    Search compares your words with mod titles and supports
+                    approximate matching for small spelling mistakes. You can
+                    also paste a Dead as Disco Nexus link or enter a numerical
+                    mod ID for an exact lookup.
+                </p>
+
+                <h3>Categories</h3>
+
+                <p>
+                    Use the category selector to narrow the catalogue to groups
+                    such as character replacements and other categories
+                    provided by Nexus Mods.
+                </p>
+
+                <h3>Sorting</h3>
+
+                <p>
+                    Use the sorting selector to change how results are ordered,
+                    including recently added or recently updated mods.
+                </p>
+
+                <div class="notice">
+                    <strong>RESPECTFUL API USAGE</strong>
+
+                    <p>
+                        Limelight caches catalogue information where appropriate
+                        and uses the official Nexus Mods API. Refresh only when
+                        you need current information.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="details"
+                class="guide-section">
+                <h2>View a Mod</h2>
+
+                <p>
+                    Select View Mod on a catalogue card to open the embedded
+                    details view. This stays inside the Browse Nexus page and
+                    provides a Back to Search control.
+                </p>
+
+                <ul class="guide-list">
+                    <li>Mod name, author, version, and category</li>
+                    <li>Summary and complete formatted description</li>
+                    <li>A carousel of images supplied through Nexus Mods</li>
+                    <li>Endorsement and download information</li>
+                    <li>A Files view for available download versions</li>
+                    <li>A link to open the complete Nexus Mods page</li>
+                </ul>
+
+                <p>
+                    Images and descriptions belong to their respective mod
+                    authors and are displayed from information supplied by
+                    Nexus Mods.
+                </p>
+            </section>
+
+            <section
+                id="files"
+                class="guide-section">
+                <h2>Choose a File</h2>
+
+                <p>
+                    Select View Files from the embedded mod details page.
+                    Limelight requests the files currently available for that
+                    mod and displays their version and description information.
+                </p>
+
+                <p>
+                    Always read the author's instructions before selecting a
+                    file. Some mods may offer optional versions, compatibility
+                    patches, or archives intended for manual installation.
+                </p>
+            </section>
+
+            <section
+                id="downloads"
+                class="guide-section">
+                <h2>Download Behaviour</h2>
+
+                <h3>Nexus Mods Premium</h3>
+
+                <p>
+                    Nexus Mods permits supported direct API downloads for
+                    connected Premium accounts. Limelight can track the download,
+                    validate the archive, and pass it into the normal mod import
+                    process.
+                </p>
+
+                <h3>Free Nexus Mods Accounts</h3>
+
+                <p>
+                    During personal-key testing, direct API downloads may not be
+                    available to free accounts. Limelight will explain this and
+                    direct the user to the Nexus Mods website for a manual
+                    download.
+                </p>
+
+                <div class="notice notice-warning">
+                    <strong>DOWNLOAD FAILED DOES NOT MEAN THE MOD IS BROKEN</strong>
+
+                    <p>
+                        If Limelight reports that a Premium account is required,
+                        the limitation applies to the direct download method.
+                        You may still download the file manually from Nexus Mods
+                        and import its ZIP through Limelight.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="download-page"
+                class="guide-section">
+                <h2>The Downloads Page</h2>
+
+                <p>
+                    Downloads provides one place to review current and recent
+                    Nexus download activity.
+                </p>
+
+                <ul class="guide-list">
+                    <li>Queued downloads</li>
+                    <li>Current transfer progress</li>
+                    <li>Completed downloads</li>
+                    <li>Automatic installation results</li>
+                    <li>Failed or cancelled downloads</li>
+                    <li>Messages explaining manual-download requirements</li>
+                </ul>
+            </section>
+
+            <section
+                id="account-safety"
+                class="guide-section">
+                <h2>Keep Your Account Safe</h2>
+
+                <ul class="guide-list">
+                    <li>Never send your personal API key to another person.</li>
+                    <li>Do not include it in screenshots or diagnostic reports.</li>
+                    <li>Do not commit it to GitHub or another source repository.</li>
+                    <li>Disconnect Limelight before sharing your Windows account.</li>
+                    <li>Revoke the key through Nexus Mods if you believe it was exposed.</li>
+                </ul>
+
+                <p>
+                    Limelight is designed to follow the Nexus Mods API rules and
+                    will move to the approved public authentication flow before
+                    its Nexus-enabled public release.
+                </p>
+            </section>
+
+            <section
+                id="next-step"
+                class="guide-section">
+                <h2>Your Next Step</h2>
+
+                <p>
+                    If Limelight or the managed loader encounters a problem, the
+                    troubleshooting guide explains the safest recovery process.
+                </p>
+
+                <a
+                    class="next-page-card"
+                    href="troubleshooting.html">
+                    <span>
+                        <small>NEXT GUIDE</small>
+                        <strong>Troubleshooting Limelight</strong>
+                    </span>
+
+                    <span
+                        class="next-page-arrow"
+                        aria-hidden="true">
+                        →
+                    </span>
+                </a>
+            </section>
+        </article>
+
+        <aside
+            class="table-of-contents"
+            aria-label="On this page">
+            <strong>ON THIS PAGE</strong>
+
+            <a href="#testing-access">Testing Access</a>
+            <a href="#connect-account">Connect an Account</a>
+            <a href="#browse">Browse the Catalogue</a>
+            <a href="#details">View a Mod</a>
+            <a href="#files">Choose a File</a>
+            <a href="#downloads">Download Behaviour</a>
+            <a href="#download-page">Downloads Page</a>
+            <a href="#account-safety">Account Safety</a>
+            <a href="#next-step">Next Step</a>
+        </aside>
+    </div>
+</main>
+
+            <footer class="site-footer">
+                <div>
+                    <strong>LIMELIGHT</strong>
+                    <span>Made by Henreh</span>
+                </div>
+
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="troubleshooting.html">Support</a>
+                    <a href="https://github.com/Henreh1" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

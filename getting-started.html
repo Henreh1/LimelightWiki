@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Official documentation for Limelight, the Dead as Disco mod manager and live loader.">
+
+    <title>Getting Started | Limelight Documentation</title>
+
+    <link
+        rel="stylesheet"
+        href="assets/css/styles.css">
+
+    <script
+        src="assets/js/site.js"
+        defer>
+    </script>
+</head>
+
+<body data-page="getting-started">
+    <a
+        class="skip-link"
+        href="#main-content">
+        Skip to documentation
+    </a>
+
+    <div class="site-shell">
+        <!-- I keep the documentation navigation in one predictable place. -->
+        <aside
+            id="documentationSidebar"
+            class="sidebar">
+            <div class="sidebar-brand">
+                <a
+                    class="brand-link"
+                    href="index.html"
+                    aria-label="Limelight documentation home">
+                    <span
+                        class="brand-mark"
+                        aria-hidden="true">
+                        <span class="brand-mark-inner">L</span>
+                    </span>
+
+                    <span class="brand-copy">
+                        <strong>LIMELIGHT</strong>
+                        <small>DOCUMENTATION</small>
+                    </span>
+                </a>
+            </div>
+
+            <nav
+                class="documentation-navigation"
+                aria-label="Documentation">
+                <p class="navigation-label">START HERE</p>
+
+                <a
+                    class="navigation-link active"
+                    href="index.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Documentation Home</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="getting-started.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Getting Started</span>
+                </a>
+
+                <p class="navigation-label">LIVE MODDING</p>
+
+                <a
+                    class="navigation-link"
+                    href="live-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Live Loader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="x19-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>X19 LLoader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="nexus-mods.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Nexus Mods</span>
+                </a>
+
+                <p class="navigation-label">SUPPORT</p>
+
+                <a
+                    class="navigation-link"
+                    href="troubleshooting.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Troubleshooting</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="privacy.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Privacy</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-status">
+                <span class="status-dot" aria-hidden="true"></span>
+
+                <div>
+                    <strong>PRIVATE TEST DOCS</strong>
+                    <span>Documentation is still being prepared.</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page-column">
+            <header class="topbar">
+                <button
+                    id="menuToggle"
+                    class="menu-button"
+                    type="button"
+                    aria-label="Open documentation navigation"
+                    aria-controls="documentationSidebar"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="topbar-title">
+                    <span class="topbar-diamond" aria-hidden="true"></span>
+                    <strong>LIMELIGHT</strong>
+                    <span>/</span>
+                    <span>DEAD AS DISCO MOD MANAGER</span>
+                </div>
+
+                <a
+                    class="topbar-link"
+                    href="https://github.com/Henreh1/Limelight"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    VIEW ON GITHUB
+                </a>
+            </header>
+
+           <main
+    id="main-content"
+    class="documentation-page">
+    <div class="breadcrumbs">
+        <a href="index.html">DOCUMENTATION</a>
+        <span>/</span>
+        <span>GETTING STARTED</span>
+    </div>
+
+    <header class="documentation-hero">
+        <span class="eyebrow">GETTING STARTED</span>
+
+        <h1>WELCOME TO LIMELIGHT</h1>
+
+        <p>
+            This guide will take you from a fresh Limelight installation
+            to launching Dead as Disco with your first managed character mod.
+        </p>
+    </header>
+
+    <div class="article-layout">
+        <article class="article">
+            <section
+                id="requirements"
+                class="guide-section">
+                <h2>Before You Begin</h2>
+
+                <p>
+                    Limelight is a Windows mod manager built specifically for
+                    Dead as Disco. Make sure the game is installed through
+                    Steam and has been launched normally at least once.
+                </p>
+
+                <ul class="guide-list">
+                    <li>Windows 10 or Windows 11, 64-bit</li>
+                    <li>A legitimate Steam installation of Dead as Disco</li>
+                    <li>A supported version of the game</li>
+                    <li>Enough free space for your imported mods</li>
+                    <li>ZIP archives containing valid Unreal package files</li>
+                </ul>
+
+                <div class="notice notice-warning">
+                    <strong>PRIVATE TEST BUILD</strong>
+
+                    <p>
+                        This documentation currently covers Limelight's private
+                        testing builds. Features and compatibility requirements
+                        may change before the public release.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="install"
+                class="guide-section">
+                <h2>Install Limelight</h2>
+
+                <p>
+                    Limelight is currently distributed as a portable test
+                    package. It does not need to be placed inside the game
+                    directory.
+                </p>
+
+                <div class="step-list">
+                    <div class="guide-step">
+                        <span class="step-number">01</span>
+
+                        <div>
+                            <h3>Extract the test package</h3>
+
+                            <p>
+                                Extract the complete Limelight ZIP into a normal,
+                                writable folder such as Documents. Do not run the
+                                application from inside the ZIP archive.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">02</span>
+
+                        <div>
+                            <h3>Keep the package together</h3>
+
+                            <p>
+                                Do not move only the executable. The Payloads
+                                folder and supporting files must remain beside
+                                Limelight.exe.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">03</span>
+
+                        <div>
+                            <h3>Open Limelight</h3>
+
+                            <p>
+                                Start Limelight.exe. The splash screen will
+                                appear while the application prepares its
+                                settings and managed services.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                id="connect-game"
+                class="guide-section">
+                <h2>Connect Dead as Disco</h2>
+
+                <p>
+                    On the first launch, Limelight will ask for the directory
+                    where Dead as Disco is installed.
+                </p>
+
+                <p>
+                    Select the main game directory containing the
+                    <span class="inline-code">Pagoda</span> folder. A typical
+                    installation looks like this:
+                </p>
+
+                <div class="code-block">D:\SteamLibrary\steamapps\common\Dead as Disco</div>
+
+                <p>
+                    Do not select the Pagoda, Binaries, Win64, or executable
+                    folders individually. Limelight needs the main Dead as Disco
+                    directory so it can validate the complete installation.
+                </p>
+
+                <div class="notice">
+                    <strong>COMPATIBILITY CHECK</strong>
+
+                    <p>
+                        Limelight checks the connected game build before enabling
+                        managed loader installation. The current private test
+                        build supports Steam build 24086779 with executable
+                        compatibility label ++brainjar+release-CL-29846.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="import-mod"
+                class="guide-section">
+                <h2>Import Your First Mod</h2>
+
+                <div class="step-list">
+                    <div class="guide-step">
+                        <span class="step-number">01</span>
+
+                        <div>
+                            <h3>Select Import Mod</h3>
+
+                            <p>
+                                Use the Import Mod button on the Dashboard and
+                                choose the ZIP archive you downloaded.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">02</span>
+
+                        <div>
+                            <h3>Let Limelight inspect it</h3>
+
+                            <p>
+                                Limelight safely extracts the archive, locates
+                                its PAK, UCAS, and UTOC files, and scans the
+                                contained Unreal asset paths.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">03</span>
+
+                        <div>
+                            <h3>Open My Mods</h3>
+
+                            <p>
+                                The imported mod will appear in your character
+                                library. You can rename it without changing its
+                                stored files.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">04</span>
+
+                        <div>
+                            <h3>Select Activate</h3>
+
+                            <p>
+                                Activating a mod marks it as the current model.
+                                If the game is already running with the Live
+                                Loader, Limelight will perform a safe live switch.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                id="launch-mode"
+                class="guide-section">
+                <h2>Choose a Launch Mode</h2>
+
+                <p>
+                    When you select Launch Game, Limelight asks which loading
+                    mode you would like to use.
+                </p>
+
+                <h3>Live Loader</h3>
+
+                <p>
+                    Starts Dead as Disco with Limelight's managed UE4SS and
+                    native bridge. You can activate compatible mods without
+                    restarting the game.
+                </p>
+
+                <h3>X19 LLoader</h3>
+
+                <p>
+                    Uses a configured group of mods that can be rotated with a
+                    keyboard or controller button. The group can follow your
+                    chosen order or use shuffle mode.
+                </p>
+
+                <h3>No Live Loader</h3>
+
+                <p>
+                    Starts the game without Limelight's live-switching session.
+                    This reduces startup time and resource usage when you do not
+                    need to change mods while playing.
+                </p>
+            </section>
+
+            <section
+                id="safe-switching"
+                class="guide-section">
+                <h2>Switch Mods Safely</h2>
+
+                <p>
+                    Unreal Engine temporarily tears down and rebuilds game
+                    objects during level changes. Limelight blocks switching
+                    while this is happening.
+                </p>
+
+                <ul class="guide-list">
+                    <li>Wait until the new level is fully visible.</li>
+                    <li>Do not repeatedly press the X19 hotkey during a switch.</li>
+                    <li>Wait for the in-game Limelight indicator to finish.</li>
+                    <li>Keep Limelight open while using either Live Loader mode.</li>
+                    <li>Restart the game if Limelight reports that the session needs recovery.</li>
+                </ul>
+
+                <div class="notice notice-warning">
+                    <strong>DO NOT FORCE A SWITCH</strong>
+
+                    <p>
+                        If Limelight says that a level change or previous switch
+                        is still in progress, wait before trying again. This
+                        protects the game from unsafe asset reloads.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="next-step"
+                class="guide-section">
+                <h2>Your Next Step</h2>
+
+                <p>
+                    You now know how to connect the game, import a mod, and
+                    choose the right launch mode. The Live Loader guide explains
+                    what happens during an in-game switch.
+                </p>
+
+                <a
+                    class="next-page-card"
+                    href="live-loader.html">
+                    <span>
+                        <small>NEXT GUIDE</small>
+                        <strong>Understanding the Live Loader</strong>
+                    </span>
+
+                    <span
+                        class="next-page-arrow"
+                        aria-hidden="true">
+                        →
+                    </span>
+                </a>
+            </section>
+        </article>
+
+        <aside
+            class="table-of-contents"
+            aria-label="On this page">
+            <strong>ON THIS PAGE</strong>
+
+            <a href="#requirements">Before You Begin</a>
+            <a href="#install">Install Limelight</a>
+            <a href="#connect-game">Connect the Game</a>
+            <a href="#import-mod">Import a Mod</a>
+            <a href="#launch-mode">Choose a Launch Mode</a>
+            <a href="#safe-switching">Switch Safely</a>
+            <a href="#next-step">Next Step</a>
+        </aside>
+    </div>
+</main>
+
+            <footer class="site-footer">
+                <div>
+                    <strong>LIMELIGHT</strong>
+                    <span>Made by Henreh</span>
+                </div>
+
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="troubleshooting.html">Support</a>
+                    <a href="https://github.com/Henreh1" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

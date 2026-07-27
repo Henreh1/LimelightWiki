@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Official documentation for Limelight, the Dead as Disco mod manager and live loader.">
+
+    <title>Privacy | Limelight Documentation</title>
+
+    <link
+        rel="stylesheet"
+        href="assets/css/styles.css">
+
+    <script
+        src="assets/js/site.js"
+        defer>
+    </script>
+</head>
+
+<body data-page="privacy">
+    <a
+        class="skip-link"
+        href="#main-content">
+        Skip to documentation
+    </a>
+
+    <div class="site-shell">
+        <!-- I keep the documentation navigation in one predictable place. -->
+        <aside
+            id="documentationSidebar"
+            class="sidebar">
+            <div class="sidebar-brand">
+                <a
+                    class="brand-link"
+                    href="index.html"
+                    aria-label="Limelight documentation home">
+                    <span
+                        class="brand-mark"
+                        aria-hidden="true">
+                        <span class="brand-mark-inner">L</span>
+                    </span>
+
+                    <span class="brand-copy">
+                        <strong>LIMELIGHT</strong>
+                        <small>DOCUMENTATION</small>
+                    </span>
+                </a>
+            </div>
+
+            <nav
+                class="documentation-navigation"
+                aria-label="Documentation">
+                <p class="navigation-label">START HERE</p>
+
+                <a
+                    class="navigation-link active"
+                    href="index.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Documentation Home</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="getting-started.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Getting Started</span>
+                </a>
+
+                <p class="navigation-label">LIVE MODDING</p>
+
+                <a
+                    class="navigation-link"
+                    href="live-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Live Loader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="x19-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>X19 LLoader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="nexus-mods.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Nexus Mods</span>
+                </a>
+
+                <p class="navigation-label">SUPPORT</p>
+
+                <a
+                    class="navigation-link"
+                    href="troubleshooting.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Troubleshooting</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="privacy.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Privacy</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-status">
+                <span class="status-dot" aria-hidden="true"></span>
+
+                <div>
+                    <strong>PRIVATE TEST DOCS</strong>
+                    <span>Documentation is still being prepared.</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page-column">
+            <header class="topbar">
+                <button
+                    id="menuToggle"
+                    class="menu-button"
+                    type="button"
+                    aria-label="Open documentation navigation"
+                    aria-controls="documentationSidebar"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="topbar-title">
+                    <span class="topbar-diamond" aria-hidden="true"></span>
+                    <strong>LIMELIGHT</strong>
+                    <span>/</span>
+                    <span>DEAD AS DISCO MOD MANAGER</span>
+                </div>
+
+                <a
+                    class="topbar-link"
+                    href="https://github.com/Henreh1/Limelight"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    VIEW ON GITHUB
+                </a>
+            </header>
+
+          <main
+    id="main-content"
+    class="documentation-page">
+    <div class="breadcrumbs">
+        <a href="index.html">DOCUMENTATION</a>
+        <span>/</span>
+        <span>PRIVACY</span>
+    </div>
+
+    <header class="documentation-hero">
+        <span class="eyebrow">YOUR DATA AND LIMELIGHT</span>
+
+        <h1>PRIVACY</h1>
+
+        <p>
+            Limelight is designed to keep application settings, imported mods,
+            and diagnostic information under the user's control.
+        </p>
+    </header>
+
+    <div class="article-layout">
+        <article class="article">
+            <section
+                id="overview"
+                class="guide-section">
+                <h2>Privacy Overview</h2>
+
+                <p>
+                    Limelight is a standalone desktop application. It does not
+                    require a Limelight account and does not automatically
+                    upload diagnostic reports.
+                </p>
+
+                <p>
+                    The private test build does not include advertising,
+                    behavioural analytics, or hidden usage tracking.
+                </p>
+
+                <div class="notice">
+                    <strong>PRIVATE TEST BUILD</strong>
+
+                    <p>
+                        This page describes Limelight's current private testing
+                        behaviour. It will be reviewed and expanded before the
+                        public release.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="local-data"
+                class="guide-section">
+                <h2>Data Stored Locally</h2>
+
+                <p>
+                    Limelight stores the information needed to preserve your
+                    library and application preferences on your Windows account.
+                </p>
+
+                <ul class="guide-list">
+                    <li>The connected Dead as Disco directory</li>
+                    <li>Imported mod names and local identifiers</li>
+                    <li>Mod installation directories</li>
+                    <li>Scanned Unreal asset manifests</li>
+                    <li>The currently selected mod</li>
+                    <li>X19 group membership and ordering</li>
+                    <li>X19 shuffle and input settings</li>
+                    <li>Discord Rich Presence preference</li>
+                    <li>Optional resource overlay preference</li>
+                    <li>Live-session recovery information</li>
+                </ul>
+
+                <p>
+                    Limelight's application data is normally stored beneath:
+                </p>
+
+                <div class="code-block">%LOCALAPPDATA%\Limelight</div>
+            </section>
+
+            <section
+                id="mod-files"
+                class="guide-section">
+                <h2>Imported Mod Files</h2>
+
+                <p>
+                    Imported archives are extracted into Limelight's local mod
+                    library. Limelight scans their package information to learn
+                    which Dead as Disco assets they replace.
+                </p>
+
+                <p>
+                    These files remain on the user's computer. Removing a mod
+                    through Limelight removes its managed library entry and
+                    associated local files.
+                </p>
+
+                <div class="notice notice-warning">
+                    <strong>MOD AUTHOR CONTENT</strong>
+
+                    <p>
+                        Imported mod files belong to their respective authors.
+                        Limelight does not grant permission to redistribute,
+                        reupload, or claim ownership of another creator's work.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="nexus"
+                class="guide-section">
+                <h2>Nexus Mods Connection</h2>
+
+                <p>
+                    During private testing, Limelight can connect to Nexus Mods
+                    using a personal API key supplied by the tester.
+                </p>
+
+                <p>
+                    The credential stays on the current Windows account and is
+                    used only for requests made to the Nexus Mods API. Limelight
+                    does not place the key inside diagnostic reports.
+                </p>
+
+                <ul class="guide-list">
+                    <li>The API key is not committed to Limelight's repositories.</li>
+                    <li>The API key should never be shared with another tester.</li>
+                    <li>Selecting Disconnect removes the saved Limelight connection.</li>
+                    <li>A key can also be revoked through the Nexus Mods website.</li>
+                </ul>
+
+                <p>
+                    Catalogue data, mod descriptions, images, author names, and
+                    file details are requested from Nexus Mods when the related
+                    Limelight pages are used.
+                </p>
+            </section>
+
+            <section
+                id="discord"
+                class="guide-section">
+                <h2>Discord Rich Presence</h2>
+
+                <p>
+                    Discord Rich Presence is optional. When enabled and the
+                    Discord desktop client is open, Limelight can display that
+                    the application is being used.
+                </p>
+
+                <p>
+                    Activity details may include the selected Live Loader mode,
+                    game-session state, and the display name of the active mod.
+                    Limelight does not request or store the user's Discord
+                    password.
+                </p>
+
+                <p>
+                    Rich Presence can be disabled from Limelight's General
+                    settings.
+                </p>
+            </section>
+
+            <section
+                id="diagnostics"
+                class="guide-section">
+                <h2>Diagnostic Reports</h2>
+
+                <p>
+                    Diagnostic reports are created only when the user selects
+                    Export Diagnostic Report. Limelight does not automatically
+                    upload the resulting file.
+                </p>
+
+                <p>
+                    A report may contain:
+                </p>
+
+                <ul class="guide-list">
+                    <li>Limelight, Windows, and .NET version information</li>
+                    <li>Game connection and process status</li>
+                    <li>Installed mod count and active mod name</li>
+                    <li>Managed loader installation status</li>
+                    <li>Live-session status and recent errors</li>
+                    <li>Mounted container names, sizes, and switch results</li>
+                    <li>Recent relevant UE4SS diagnostic events</li>
+                </ul>
+
+                <div class="notice">
+                    <strong>THE USER CHOOSES WHETHER TO SHARE</strong>
+
+                    <p>
+                        Review the report before sending it. Limelight keeps the
+                        exported file on the user's computer until the user
+                        chooses to share or delete it.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="resource-overlay"
+                class="guide-section">
+                <h2>Resource Overlay</h2>
+
+                <p>
+                    The optional resource overlay reads Limelight's current
+                    process resource usage, such as memory consumption. This
+                    information is displayed locally and is not transmitted by
+                    the overlay.
+                </p>
+
+                <p>
+                    The resource overlay is disabled by default and can be
+                    enabled from General settings.
+                </p>
+            </section>
+
+            <section
+                id="third-parties"
+                class="guide-section">
+                <h2>Third-Party Services</h2>
+
+                <p>
+                    Some optional Limelight features communicate with external
+                    services selected by the user:
+                </p>
+
+                <ul class="guide-list">
+                    <li>Steam for launching and validating Dead as Disco</li>
+                    <li>Nexus Mods for catalogue and download functionality</li>
+                    <li>Discord for optional Rich Presence</li>
+                    <li>GitHub for Limelight source, releases, and documentation</li>
+                </ul>
+
+                <p>
+                    Each external service operates under its own account,
+                    privacy, and acceptable-use policies.
+                </p>
+            </section>
+
+            <section
+                id="removing-data"
+                class="guide-section">
+                <h2>Removing Local Data</h2>
+
+                <p>
+                    Individual mods can be removed through My Mods. The Nexus
+                    connection can be removed through Settings.
+                </p>
+
+                <p>
+                    To remove all Limelight application data, first close Dead
+                    as Disco and Limelight. Then remove Limelight's application
+                    data folder:
+                </p>
+
+                <div class="code-block">%LOCALAPPDATA%\Limelight</div>
+
+                <p>
+                    Removing this folder clears saved settings, imported mod
+                    metadata, cached catalogue information, and recovery state.
+                    Limelight will behave like a fresh installation the next
+                    time it starts.
+                </p>
+            </section>
+
+            <section
+                id="questions"
+                class="guide-section">
+                <h2>Questions or Concerns</h2>
+
+                <p>
+                    Privacy concerns discovered during testing should include
+                    the Limelight version, the affected feature, and a clear
+                    description of the unexpected behaviour. Never include a
+                    Nexus API key in the report.
+                </p>
+
+                <a
+                    class="next-page-card"
+                    href="index.html">
+                    <span>
+                        <small>RETURN TO</small>
+                        <strong>Documentation Home</strong>
+                    </span>
+
+                    <span
+                        class="next-page-arrow"
+                        aria-hidden="true">
+                        →
+                    </span>
+                </a>
+            </section>
+        </article>
+
+        <aside
+            class="table-of-contents"
+            aria-label="On this page">
+            <strong>ON THIS PAGE</strong>
+
+            <a href="#overview">Overview</a>
+            <a href="#local-data">Local Data</a>
+            <a href="#mod-files">Mod Files</a>
+            <a href="#nexus">Nexus Mods</a>
+            <a href="#discord">Discord Presence</a>
+            <a href="#diagnostics">Diagnostic Reports</a>
+            <a href="#resource-overlay">Resource Overlay</a>
+            <a href="#third-parties">Third Parties</a>
+            <a href="#removing-data">Removing Data</a>
+            <a href="#questions">Questions</a>
+        </aside>
+    </div>
+</main>
+
+            <footer class="site-footer">
+                <div>
+                    <strong>LIMELIGHT</strong>
+                    <span>Made by Henreh</span>
+                </div>
+
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="troubleshooting.html">Support</a>
+                    <a href="https://github.com/Henreh1" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

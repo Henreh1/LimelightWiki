@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Official documentation for Limelight, the Dead as Disco mod manager and live loader.">
+
+    <title>Live Loader | Limelight Documentation</title>
+
+    <link
+        rel="stylesheet"
+        href="assets/css/styles.css">
+
+    <script
+        src="assets/js/site.js"
+        defer>
+    </script>
+</head>
+
+<body data-page="live-loader">
+    <a
+        class="skip-link"
+        href="#main-content">
+        Skip to documentation
+    </a>
+
+    <div class="site-shell">
+        <!-- I keep the documentation navigation in one predictable place. -->
+        <aside
+            id="documentationSidebar"
+            class="sidebar">
+            <div class="sidebar-brand">
+                <a
+                    class="brand-link"
+                    href="index.html"
+                    aria-label="Limelight documentation home">
+                    <span
+                        class="brand-mark"
+                        aria-hidden="true">
+                        <span class="brand-mark-inner">L</span>
+                    </span>
+
+                    <span class="brand-copy">
+                        <strong>LIMELIGHT</strong>
+                        <small>DOCUMENTATION</small>
+                    </span>
+                </a>
+            </div>
+
+            <nav
+                class="documentation-navigation"
+                aria-label="Documentation">
+                <p class="navigation-label">START HERE</p>
+
+                <a
+                    class="navigation-link active"
+                    href="index.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Documentation Home</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="getting-started.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Getting Started</span>
+                </a>
+
+                <p class="navigation-label">LIVE MODDING</p>
+
+                <a
+                    class="navigation-link"
+                    href="live-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Live Loader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="x19-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>X19 LLoader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="nexus-mods.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Nexus Mods</span>
+                </a>
+
+                <p class="navigation-label">SUPPORT</p>
+
+                <a
+                    class="navigation-link"
+                    href="troubleshooting.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Troubleshooting</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="privacy.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Privacy</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-status">
+                <span class="status-dot" aria-hidden="true"></span>
+
+                <div>
+                    <strong>PRIVATE TEST DOCS</strong>
+                    <span>Documentation is still being prepared.</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page-column">
+            <header class="topbar">
+                <button
+                    id="menuToggle"
+                    class="menu-button"
+                    type="button"
+                    aria-label="Open documentation navigation"
+                    aria-controls="documentationSidebar"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="topbar-title">
+                    <span class="topbar-diamond" aria-hidden="true"></span>
+                    <strong>LIMELIGHT</strong>
+                    <span>/</span>
+                    <span>DEAD AS DISCO MOD MANAGER</span>
+                </div>
+
+                <a
+                    class="topbar-link"
+                    href="https://github.com/Henreh1/Limelight"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    VIEW ON GITHUB
+                </a>
+            </header>
+
+          <main
+    id="main-content"
+    class="documentation-page">
+    <div class="breadcrumbs">
+        <a href="index.html">DOCUMENTATION</a>
+        <span>/</span>
+        <span>LIVE LOADER</span>
+    </div>
+
+    <header class="documentation-hero">
+        <span class="eyebrow">LIVE MODDING</span>
+
+        <h1>THE LIVE LOADER</h1>
+
+        <p>
+            Limelight's Live Loader lets compatible Dead as Disco replacement
+            mods take the spotlight without requiring the game to be restarted.
+        </p>
+    </header>
+
+    <div class="article-layout">
+        <article class="article">
+            <section
+                id="overview"
+                class="guide-section">
+                <h2>What the Live Loader Does</h2>
+
+                <p>
+                    The Live Loader connects Limelight to the running game.
+                    It mounts the selected mod's Unreal container, reloads the
+                    assets changed by that mod, and refreshes Charlie's active
+                    character mesh.
+                </p>
+
+                <p>
+                    Limelight manages the required UE4SS installation, Lua
+                    bridge, and native bridge automatically. Users should not
+                    need to configure these components manually.
+                </p>
+
+                <div class="notice">
+                    <strong>DESIGNED FOR REPLACEMENT MODS</strong>
+
+                    <p>
+                        The Live Loader is intended primarily for mods that
+                        replace existing Dead as Disco character assets. Mods
+                        containing unrelated executable plugins or unsupported
+                        game logic may require a normal restart.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="startup"
+                class="guide-section">
+                <h2>Starting a Live Session</h2>
+
+                <div class="step-list">
+                    <div class="guide-step">
+                        <span class="step-number">01</span>
+
+                        <div>
+                            <h3>Select Launch Game</h3>
+
+                            <p>
+                                Use the Launch Game button on Limelight's
+                                Dashboard.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">02</span>
+
+                        <div>
+                            <h3>Choose Live Loader</h3>
+
+                            <p>
+                                Select the standard Live Loader from the launch
+                                mode window. Choose X19 LLoader if you want to
+                                rotate through a configured character group.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">03</span>
+
+                        <div>
+                            <h3>Wait for initialisation</h3>
+
+                            <p>
+                                Limelight waits for UE4SS, the runtime bridge,
+                                and Unreal's object system. An in-game overlay
+                                shows that the stage is being prepared.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">04</span>
+
+                        <div>
+                            <h3>Begin playing</h3>
+
+                            <p>
+                                When the loader reports Online, compatible mods
+                                can be activated from My Mods without closing
+                                Dead as Disco.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notice notice-warning">
+                    <strong>KEEP LIMELIGHT OPEN</strong>
+
+                    <p>
+                        Limelight must remain open while a live session is
+                        active. Closing it removes the controls and progress
+                        reporting used for safe switches.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="switch-process"
+                class="guide-section">
+                <h2>What Happens During a Switch</h2>
+
+                <p>
+                    Limelight performs several checks before it changes the
+                    active character. This is why the first switch of a session
+                    may take longer than later switches.
+                </p>
+
+                <div class="step-list">
+                    <div class="guide-step">
+                        <span class="step-number">01</span>
+
+                        <div>
+                            <h3>Safety check</h3>
+
+                            <p>
+                                Limelight confirms that the game is running,
+                                the bridge is online, and Unreal is not changing
+                                levels.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">02</span>
+
+                        <div>
+                            <h3>Asset inspection</h3>
+
+                            <p>
+                                The asset manifest created during import tells
+                                Limelight which meshes, materials, textures,
+                                portraits, and localisation assets the selected
+                                mod replaces.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">03</span>
+
+                        <div>
+                            <h3>Container mounting</h3>
+
+                            <p>
+                                The selected PAK, UCAS, and UTOC files are
+                                staged and mounted with a suitable priority.
+                                Existing compatible mounts are reused where
+                                possible.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <span class="step-number">04</span>
+
+                        <div>
+                            <h3>Asset refresh</h3>
+
+                            <p>
+                                Limelight releases the previous cached packages,
+                                loads fresh replacements, and refreshes the live
+                                Charlie character component.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                id="status"
+                class="guide-section">
+                <h2>Understanding Loader Status</h2>
+
+                <h3>Ready</h3>
+
+                <p>
+                    The managed loader files are installed. The game is not
+                    currently connected to a live session.
+                </p>
+
+                <h3>Online</h3>
+
+                <p>
+                    Dead as Disco and the Limelight bridge are connected.
+                    Live switching is available when the game is in a safe state.
+                </p>
+
+                <h3>Switching</h3>
+
+                <p>
+                    A mod is currently being mounted or refreshed. Wait for the
+                    in-game indicator to finish before starting another switch.
+                </p>
+
+                <h3>Temporarily Locked</h3>
+
+                <p>
+                    Unreal is loading or changing levels. Limelight keeps the
+                    current mod active and blocks new switches until the level
+                    becomes stable.
+                </p>
+
+                <h3>Interrupted</h3>
+
+                <p>
+                    The previous session did not finish cleanly. Close the game
+                    and use the recovery tools in Settings before starting a
+                    new session.
+                </p>
+            </section>
+
+            <section
+                id="safe-switching"
+                class="guide-section">
+                <h2>Safe Switching Rules</h2>
+
+                <ul class="guide-list">
+                    <li>Wait until the current level is fully visible.</li>
+                    <li>Do not switch during a loading screen.</li>
+                    <li>Do not repeatedly press Activate or the X19 hotkey.</li>
+                    <li>Wait for the in-game progress indicator to disappear.</li>
+                    <li>Keep the game and Limelight open until the switch completes.</li>
+                    <li>Restart the game if the live session reports that recovery is required.</li>
+                </ul>
+
+                <div class="notice notice-warning">
+                    <strong>LEVEL TRANSITIONS</strong>
+
+                    <p>
+                        Unreal destroys and recreates important objects while a
+                        level is changing. Limelight deliberately refuses new
+                        switches during this period to avoid unsafe package and
+                        asset access.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="problems"
+                class="guide-section">
+                <h2>If the Loader Does Not Connect</h2>
+
+                <ol class="guide-list">
+                    <li>Close Dead as Disco completely.</li>
+                    <li>Open Limelight and confirm that the game directory is connected.</li>
+                    <li>Open Settings, then select the Support category.</li>
+                    <li>Select Repair Live Loader.</li>
+                    <li>Launch the game again through Limelight.</li>
+                </ol>
+
+                <p>
+                    If the problem continues, export a diagnostic report from
+                    Settings. Diagnostic reports omit private Nexus API
+                    credentials.
+                </p>
+
+                <a
+                    class="button button-secondary"
+                    href="troubleshooting.html">
+                    OPEN TROUBLESHOOTING
+                </a>
+            </section>
+
+            <section
+                id="next-step"
+                class="guide-section">
+                <h2>Your Next Step</h2>
+
+                <p>
+                    The X19 LLoader builds on the same live-switching system and
+                    adds ordered groups, shuffle mode, and keyboard or controller
+                    controls.
+                </p>
+
+                <a
+                    class="next-page-card"
+                    href="x19-loader.html">
+                    <span>
+                        <small>NEXT GUIDE</small>
+                        <strong>Configure the X19 LLoader</strong>
+                    </span>
+
+                    <span
+                        class="next-page-arrow"
+                        aria-hidden="true">
+                        →
+                    </span>
+                </a>
+            </section>
+        </article>
+
+        <aside
+            class="table-of-contents"
+            aria-label="On this page">
+            <strong>ON THIS PAGE</strong>
+
+            <a href="#overview">Overview</a>
+            <a href="#startup">Start a Session</a>
+            <a href="#switch-process">Switch Process</a>
+            <a href="#status">Loader Status</a>
+            <a href="#safe-switching">Safety Rules</a>
+            <a href="#problems">Connection Problems</a>
+            <a href="#next-step">Next Step</a>
+        </aside>
+    </div>
+</main>
+
+            <footer class="site-footer">
+                <div>
+                    <strong>LIMELIGHT</strong>
+                    <span>Made by Henreh</span>
+                </div>
+
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="troubleshooting.html">Support</a>
+                    <a href="https://github.com/Henreh1" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
