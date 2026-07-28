@@ -40,7 +40,8 @@ function updateActiveNavigationLink() {
         "nexus-mods.html": "nexus-mods",
         "testing-bug-reports.html": "testing-bug-reports",
         "troubleshooting.html": "troubleshooting",
-        "privacy.html": "privacy"
+        "privacy.html": "privacy",
+        "credits.html": "credits"
     };
 
     navigationLinks.forEach(link => {
