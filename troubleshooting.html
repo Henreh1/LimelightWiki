@@ -149,8 +149,8 @@
                 <span class="status-dot" aria-hidden="true"></span>
 
                 <div>
-                    <strong>PRIVATE TEST DOCS</strong>
-                    <span>Documentation is still being prepared.</span>
+                    <strong>PREVIEW 2 DOCS</strong>
+                    <span>Documentation for Limelight Preview 2.</span>
                 </div>
             </div>
         </aside>
@@ -357,7 +357,67 @@
                     <li>Select Repair Live Loader.</li>
                     <li>Wait for the repair to finish.</li>
                     <li>Launch the game through Limelight again.</li>
-               
+                </ol>
+            </section>
+
+            <section
+                id="purge-mods"
+                class="guide-section">
+                <h2>Return the Game to a Clean Mod State</h2>
+
+                <p>
+                    Preview 2 includes a recovery action for clearing every
+                    deployed mod from Dead as Disco's active mod directory.
+                    Use it when you need a clean game folder for leaderboards,
+                    compatibility testing, or conflict recovery.
+                </p>
+
+                <ol class="guide-list">
+                    <li>Close Dead as Disco completely.</li>
+                    <li>Open Settings in Limelight.</li>
+                    <li>Select the Support category.</li>
+                    <li>Select Purge All Mods.</li>
+                    <li>Read the warning and confirm the purge.</li>
+                </ol>
+
+                <div class="notice">
+                    <strong>YOUR LIMELIGHT LIBRARY IS PRESERVED</strong>
+
+                    <p>
+                        Purge All Mods clears the game's
+                        <span class="inline-code">Pagoda\Content\Paks\~mods</span>
+                        folder and stale deployment state. Imported mods,
+                        renamed library entries, profiles, and X19 groups stay
+                        safely stored in Limelight.
+                    </p>
+                </div>
+
+                <div class="notice notice-warning">
+                    <strong>MANUALLY COPIED FILES ARE REMOVED TOO</strong>
+
+                    <p>
+                        The purge removes everything inside the game's
+                        <span class="inline-code">~mods</span> folder, including
+                        files copied there outside Limelight. Limelight cannot
+                        restore those manual files afterward.
+                    </p>
+                </div>
+            </section>
+        </article>
+
+        <aside
+            class="table-of-contents"
+            aria-label="On this page">
+            <strong>ON THIS PAGE</strong>
+
+            <a href="#quick-recovery">Quick Recovery</a>
+            <a href="#game-directory">Game Directory</a>
+            <a href="#loader-offline">Live Loader Offline</a>
+            <a href="#initialisation">Initialisation</a>
+            <a href="#purge-mods">Purge All Mods</a>
+        </aside>
+    </div>
+</main>
 
             <footer class="site-footer">
                 <div>

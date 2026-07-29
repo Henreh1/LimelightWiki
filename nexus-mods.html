@@ -149,8 +149,8 @@
                 <span class="status-dot" aria-hidden="true"></span>
 
                 <div>
-                    <strong>PRIVATE TEST DOCS</strong>
-                    <span>Documentation is still being prepared.</span>
+                    <strong>PREVIEW 2 DOCS</strong>
+                    <span>Documentation for Limelight Preview 2.</span>
                 </div>
             </div>
         </aside>
@@ -195,57 +195,56 @@
     </div>
 
     <header class="documentation-hero">
-        <span class="eyebrow">BUILT-IN MOD DISCOVERY</span>
+        <span class="eyebrow">PREVIEW 2 STATUS</span>
 
-        <h1>NEXUS MODS</h1>
+        <h1>THE CATALOGUE IS BETWEEN ACTS</h1>
 
         <p>
-            Browse the Dead as Disco catalogue, inspect mod descriptions,
-            view images and files, and manage downloads without leaving
-            Limelight.
+            Limelight's built-in Nexus catalogue is temporarily unavailable
+            while its public Nexus Mods access is prepared.
         </p>
     </header>
 
     <div class="article-layout">
         <article class="article">
             <section
-                id="testing-access"
+                id="current-status"
                 class="guide-section">
-                <h2>Private Testing Access</h2>
-
-                <p>
-                    Limelight's private test builds currently use a personal
-                    Nexus Mods API key. This allows the Nexus integration to be
-                    developed and tested before Limelight receives its public
-                    registered application flow.
-                </p>
+                <h2>Current Status</h2>
 
                 <div class="notice notice-warning">
-                    <strong>PRIVATE TESTING ONLY</strong>
+                    <strong>UNDER CONSTRUCTION</strong>
 
                     <p>
-                        Do not distribute your personal API key. The public
-                        Limelight release will not expect ordinary users to
-                        create or paste personal API keys.
+                        Browse Nexus, account connection, and direct downloads
+                        are locked in Preview 2. This prevents Limelight from
+                        relying on a private testing key or an unfinished public
+                        authentication flow.
                     </p>
                 </div>
+
+                <p>
+                    The rest of Limelight remains available. You can still
+                    download compatible mod archives from Nexus Mods in your
+                    browser and import them into Limelight normally.
+                </p>
             </section>
 
             <section
-                id="connect-account"
+                id="manual-install"
                 class="guide-section">
-                <h2>Connect a Nexus Account</h2>
+                <h2>Install a Nexus Mod Manually</h2>
 
                 <div class="step-list">
                     <div class="guide-step">
                         <span class="step-number">01</span>
 
                         <div>
-                            <h3>Open Settings</h3>
+                            <h3>Download the mod ZIP</h3>
 
                             <p>
-                                Select Settings from the Limelight sidebar, then
-                                open the Nexus Mods category.
+                                Open the mod's Nexus Mods page in your browser,
+                                choose the correct file, and download its ZIP.
                             </p>
                         </div>
                     </div>
@@ -254,11 +253,11 @@
                         <span class="step-number">02</span>
 
                         <div>
-                            <h3>Enter the testing API key</h3>
+                            <h3>Import the archive</h3>
 
                             <p>
-                                Paste the personal API key created through your
-                                Nexus Mods account settings.
+                                Select Import Mod on the Limelight dashboard, or
+                                drag the ZIP anywhere onto the Limelight window.
                             </p>
                         </div>
                     </div>
@@ -267,103 +266,63 @@
                         <span class="step-number">03</span>
 
                         <div>
-                            <h3>Select Connect</h3>
+                            <h3>Check My Mods</h3>
 
                             <p>
-                                Limelight validates the key and displays the
-                                connected Nexus Mods username when the request
-                                succeeds.
+                                Limelight validates the archive, blocks duplicate
+                                packages, and adds a valid mod to your library.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="notice">
-                    <strong>CREDENTIAL PRIVACY</strong>
+                    <strong>READ THE MOD PAGE FIRST</strong>
 
                     <p>
-                        Limelight stores the key for the current Windows account
-                        and does not include it in exported diagnostic reports.
-                        Selecting Disconnect removes the saved connection.
+                        Check the author's requirements and installation notes.
+                        Limelight supports Dead as Disco package archives, but it
+                        cannot make an incompatible mod safe or current.
                     </p>
                 </div>
             </section>
 
             <section
-                id="browse"
+                id="still-works"
                 class="guide-section">
-                <h2>Browse the Catalogue</h2>
-
-                <p>
-                    Open Browse Nexus from the main navigation. Limelight loads
-                    the Dead as Disco catalogue into pages so the complete
-                    collection can be explored without rendering every result
-                    at once.
-                </p>
-
-                <h3>Search</h3>
-
-                <p>
-                    Search compares your words with mod titles and supports
-                    approximate matching for small spelling mistakes. You can
-                    also paste a Dead as Disco Nexus link or enter a numerical
-                    mod ID for an exact lookup.
-                </p>
-
-                <h3>Categories</h3>
-
-                <p>
-                    Use the category selector to narrow the catalogue to groups
-                    such as character replacements and other categories
-                    provided by Nexus Mods.
-                </p>
-
-                <h3>Sorting</h3>
-
-                <p>
-                    Use the sorting selector to change how results are ordered,
-                    including recently added or recently updated mods.
-                </p>
-
-                <div class="notice">
-                    <strong>RESPECTFUL API USAGE</strong>
-
-                    <p>
-                        Limelight caches catalogue information where appropriate
-                        and uses the official Nexus Mods API. Refresh only when
-                        you need current information.
-                    </p>
-                </div>
-            </section>
-
-            <section
-                id="details"
-                class="guide-section">
-                <h2>View a Mod</h2>
-
-                <p>
-                    Select View Mod on a catalogue card to open the embedded
-                    details view. This stays inside the Browse Nexus page and
-                    provides a Back to Search control.
-                </p>
+                <h2>What Still Works</h2>
 
                 <ul class="guide-list">
-                    <li>Mod name, author, version, and category</li>
-                    <li>Summary and complete formatted description</li>
-                    <li>A carousel of images supplied through Nexus Mods</li>
-                    <li>Endorsement and download information</li>
-                    <li>A Files view for available download versions</li>
-                    <li>A link to open the complete Nexus Mods page</li>
+                    <li>Importing compatible ZIP archives</li>
+                    <li>Dragging mod ZIP files onto the Limelight window</li>
+                    <li>Archive validation and duplicate-package detection</li>
+                    <li>Renaming and organising imported mods</li>
+                    <li>Profiles and X19 rotation groups</li>
+                    <li>Normal and X19 live switching</li>
+                </ul>
+            </section>
+
+            <section
+                id="planned-return"
+                class="guide-section">
+                <h2>What Will Return</h2>
+
+                <ul class="guide-list">
+                    <li>The complete Dead as Disco catalogue inside Limelight</li>
+                    <li>Title search, categories, sorting, and paging</li>
+                    <li>Embedded descriptions and image galleries</li>
+                    <li>File selection and download tracking</li>
+                    <li>Approved public Nexus Mods authentication</li>
                 </ul>
 
                 <p>
-                    Images and descriptions belong to their respective mod
-                    authors and are displayed from information supplied by
-                    Nexus Mods.
+                    These features will be restored after the public integration
+                    has been reviewed and can be offered without asking users for
+                    personal API keys.
                 </p>
             </section>
 
-            <section
+            <section hidden
                 id="files"
                 class="guide-section">
                 <h2>Choose a File</h2>
@@ -381,7 +340,7 @@
                 </p>
             </section>
 
-            <section
+            <section hidden
                 id="downloads"
                 class="guide-section">
                 <h2>Download Behaviour</h2>
@@ -416,7 +375,7 @@
                 </div>
             </section>
 
-            <section
+            <section hidden
                 id="download-page"
                 class="guide-section">
                 <h2>The Downloads Page</h2>
@@ -436,7 +395,7 @@
                 </ul>
             </section>
 
-            <section
+            <section hidden
                 id="account-safety"
                 class="guide-section">
                 <h2>Keep Your Account Safe</h2>
@@ -462,16 +421,16 @@
                 <h2>Your Next Step</h2>
 
                 <p>
-                    If Limelight or the managed loader encounters a problem, the
-                    troubleshooting guide explains the safest recovery process.
+                    Continue with Getting Started to connect Dead as Disco and
+                    import your first compatible mod archive.
                 </p>
 
                 <a
                     class="next-page-card"
-                    href="troubleshooting.html">
+                    href="getting-started.html">
                     <span>
                         <small>NEXT GUIDE</small>
-                        <strong>Troubleshooting Limelight</strong>
+                        <strong>Install and Connect Limelight</strong>
                     </span>
 
                     <span
@@ -488,14 +447,10 @@
             aria-label="On this page">
             <strong>ON THIS PAGE</strong>
 
-            <a href="#testing-access">Testing Access</a>
-            <a href="#connect-account">Connect an Account</a>
-            <a href="#browse">Browse the Catalogue</a>
-            <a href="#details">View a Mod</a>
-            <a href="#files">Choose a File</a>
-            <a href="#downloads">Download Behaviour</a>
-            <a href="#download-page">Downloads Page</a>
-            <a href="#account-safety">Account Safety</a>
+            <a href="#current-status">Current Status</a>
+            <a href="#manual-install">Manual Installation</a>
+            <a href="#still-works">What Still Works</a>
+            <a href="#planned-return">What Will Return</a>
             <a href="#next-step">Next Step</a>
         </aside>
     </div>
