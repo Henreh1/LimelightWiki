@@ -28,12 +28,18 @@
     --normal-transition: 240ms ease;
 }
 
+/* I let the browser keep the current page visible until the next one is ready. */
+@view-transition {
+    navigation: auto;
+}
+
 * {
     box-sizing: border-box;
 }
 
 html {
     min-height: 100%;
+    background: var(--background);
     scroll-behavior: smooth;
 }
 
@@ -128,6 +134,32 @@ button {
     display: grid;
     grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
     min-height: 100vh;
+}
+
+::view-transition-group(root) {
+    animation-duration: 120ms;
+    animation-timing-function: cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+::view-transition-old(root) {
+    animation: none;
+    opacity: 0;
+    mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+    animation: page-fade-in 120ms ease-out both;
+    mix-blend-mode: normal;
+}
+
+@keyframes page-fade-in {
+    from {
+        opacity: 0.9;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* Sidebar */
@@ -1565,6 +1597,17 @@ body.lightbox-open {
 
     to {
         opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none;
     }
 }
 
