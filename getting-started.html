@@ -326,6 +326,12 @@
                         build 24086779 with executable
                         compatibility label ++brainjar+release-CL-29846.
                     </p>
+
+                    <p>
+                        The current managed safety profile expects Native Bridge
+                        0.1.10. Repair Live Loader installs and verifies the
+                        supported bridge files for this profile.
+                    </p>
                 </div>
             </section>
 
@@ -407,7 +413,10 @@
                 <p>
                     Starts Dead as Disco with Limelight's managed UE4SS and
                     native bridge. You can activate compatible mods without
-                    restarting the game.
+                    restarting the game. The Setting the Stage overlay remains
+                    in front while Limelight verifies UE4SS, the Lua bridge,
+                    the native bridge, mounts and reloads an active mod when one
+                    is selected, and completes a final native health check.
                 </p>
 
                 <h3>X19 LLoader</h3>
@@ -425,6 +434,18 @@
                     This reduces startup time and resource usage when you do not
                     need to change mods while playing.
                 </p>
+
+                <div class="notice">
+                    <strong>SAFE STARTUP HANDOFF</strong>
+
+                    <p>
+                        Dead as Disco may become visible behind the startup
+                        overlay before the Live Loader is ready. Leave the
+                        overlay open. Limelight returns focus to the game only
+                        after the complete startup check succeeds. The first
+                        resolver discovery can take longer than later launches.
+                    </p>
+                </div>
             </section>
 
             <section
@@ -434,8 +455,9 @@
 
                 <p>
                     Unreal Engine temporarily tears down and rebuilds game
-                    objects during level changes. Limelight blocks switching
-                    while this is happening.
+                    objects during level loading and teardown. Limelight blocks
+                    switching while this is happening. Retry only after the new
+                    level is fully visible and the transition lock has cleared.
                 </p>
 
                 <ul class="guide-list">

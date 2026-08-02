@@ -347,6 +347,15 @@
                 </p>
 
                 <p>
+                    The game may become visible behind the Setting the Stage
+                    overlay. This is expected. The overlay intentionally keeps
+                    focus until the bridge is ready, the active mod has been
+                    mounted and refreshed when one is selected, and the final
+                    native health check passes. Do not force-close Limelight
+                    only because the first discovery takes longer.
+                </p>
+
+                <p>
                     If the game reaches a playable level but the initialisation
                     overlay eventually reports a failure:
                 </p>
@@ -358,6 +367,38 @@
                     <li>Wait for the repair to finish.</li>
                     <li>Launch the game through Limelight again.</li>
                 </ol>
+            </section>
+
+            <section
+                id="crash-dumps"
+                class="guide-section">
+                <h2>UE4SS Crash Dump or Fatal Error</h2>
+
+                <p>
+                    Native Bridge 0.1.10 reduces the known initial resolver
+                    race, but Early Access cannot guarantee that every mod and
+                    every game state is safe. Keep any generated crash dump so
+                    it can be included with a report.
+                </p>
+
+                <ol class="guide-list">
+                    <li>Close and restart Dead as Disco before another live switch.</li>
+                    <li>Keep the generated <span class="inline-code">.dmp</span> file.</li>
+                    <li>Create a test report or export a diagnostic report from Support.</li>
+                    <li>Say whether the problem happened at startup, during a switch, or during a level transition.</li>
+                    <li>Do not repeatedly retry during a transition. Wait until the new level is fully visible.</li>
+                </ol>
+
+                <div class="notice notice-warning">
+                    <strong>DO NOT HIDE REPEATED CRASH DUMPS</strong>
+
+                    <p>
+                        A crash dialog can appear even when the game keeps
+                        running. Treat repeated dumps as a real safety signal,
+                        stop switching for that session, and attach the newest
+                        dump to the report.
+                    </p>
+                </div>
             </section>
 
             <section
@@ -414,6 +455,7 @@
             <a href="#game-directory">Game Directory</a>
             <a href="#loader-offline">Live Loader Offline</a>
             <a href="#initialisation">Initialisation</a>
+            <a href="#crash-dumps">Crash Dumps</a>
             <a href="#purge-mods">Purge All Mods</a>
         </aside>
     </div>

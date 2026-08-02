@@ -277,9 +277,13 @@
                             <h3>Wait for initialisation</h3>
 
                             <p>
-                                Limelight waits for UE4SS, the runtime bridge,
-                                and Unreal's object system. An in-game overlay
-                                shows that the stage is being prepared.
+                                Limelight waits for UE4SS, the Lua bridge, the
+                                native bridge, and Unreal's object system. If an
+                                active mod is selected, it is mounted and
+                                reloaded before a final native health check.
+                                The Setting the Stage overlay remains in front
+                                until this safe handoff succeeds, then focus
+                                returns to the game.
                             </p>
                         </div>
                     </div>
@@ -306,6 +310,38 @@
                         Limelight must remain open while a live session is
                         active. Closing it removes the controls and progress
                         reporting used for safe switches.
+                    </p>
+                </div>
+            </section>
+
+            <section
+                id="startup-protection"
+                class="guide-section">
+                <h2>Protected Startup Discovery</h2>
+
+                <p>
+                    Early Access uses Native Bridge 0.1.10 for the initial
+                    mount-resolver discovery. The bridge reads candidate state
+                    into guarded, stable snapshots before it follows Unreal's
+                    live objects. If Unreal changes or discards a candidate
+                    during the scan, Limelight rejects that candidate instead
+                    of using stale memory.
+                </p>
+
+                <p>
+                    This reduces the known access-violation and UE4SS crash-dump
+                    risk during startup discovery. It does not make every mod,
+                    game update, or runtime state completely crash-proof.
+                </p>
+
+                <div class="notice">
+                    <strong>SAFETY, NOT A DELAY</strong>
+
+                    <p>
+                        The overlay intentionally holds focus while the startup
+                        checks complete. The first discovery can take longer
+                        than later launches, especially after a repair or game
+                        update.
                     </p>
                 </div>
             </section>
@@ -444,9 +480,10 @@
 
                     <p>
                         Unreal destroys and recreates important objects while a
-                        level is changing. Limelight deliberately refuses new
-                        switches during this period to avoid unsafe package and
-                        asset access.
+                        level is loading or tearing down. Limelight deliberately
+                        refuses new switches during this period to avoid unsafe
+                        package and asset access. Retry only after the new level
+                        is fully visible and the transition lock has cleared.
                     </p>
                 </div>
             </section>
@@ -512,6 +549,7 @@
 
             <a href="#overview">Overview</a>
             <a href="#startup">Start a Session</a>
+            <a href="#startup-protection">Startup Protection</a>
             <a href="#switch-process">Switch Process</a>
             <a href="#status">Loader Status</a>
             <a href="#safe-switching">Safety Rules</a>
