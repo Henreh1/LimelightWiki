@@ -835,20 +835,61 @@ button {
 }
 
 .compatibility-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 28px;
-    padding: 27px 30px;
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 34px;
+    overflow: hidden;
+    padding: 31px 32px;
     border: 1px solid var(--border);
     border-radius: var(--medium-radius);
-    background: var(--panel);
+    background:
+        linear-gradient(
+            115deg,
+            rgba(49, 221, 248, 0.055),
+            transparent 52%
+        ),
+        var(--panel);
+}
+
+.compatibility-card::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 180px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--cyan));
+    content: "";
 }
 
 .compatibility-status {
     display: flex;
-    align-items: center;
+    min-width: 0;
+    align-items: flex-start;
     gap: 20px;
+}
+
+.compatibility-copy {
+    min-width: 0;
+}
+
+.compatibility-topline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+}
+
+.compatibility-live-label {
+    padding: 3px 8px;
+    border: 1px solid rgba(49, 221, 248, 0.26);
+    border-radius: 999px;
+    color: var(--cyan);
+    background: var(--cyan-soft);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.09em;
 }
 
 .status-pulse {
@@ -886,7 +927,103 @@ button {
 }
 
 .compatibility-card h3 {
-    margin-top: 4px;
+    max-width: 670px;
+    margin: 8px 0 8px;
+    font-size: clamp(22px, 2.5vw, 29px);
+}
+
+.compatibility-card .compatibility-summary {
+    max-width: 670px;
+    font-size: 15px;
+}
+
+.compatibility-dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+    margin-top: 20px;
+}
+
+.compatibility-dates > div {
+    min-width: 195px;
+    padding: 10px 12px;
+    border: 1px solid rgba(59, 70, 111, 0.64);
+    border-radius: 8px;
+    background: rgba(6, 7, 17, 0.42);
+}
+
+.compatibility-dates span,
+.compatibility-dates time {
+    display: block;
+}
+
+.compatibility-dates span {
+    color: var(--subtle);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.09em;
+}
+
+.compatibility-dates time {
+    margin-top: 2px;
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.compatibility-technical {
+    max-width: 530px;
+    margin-top: 14px;
+}
+
+.compatibility-technical summary {
+    width: fit-content;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    transition: color var(--fast-transition);
+}
+
+.compatibility-technical summary:hover {
+    color: var(--cyan);
+}
+
+.compatibility-builds {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px 24px;
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.compatibility-builds strong {
+    margin-left: 5px;
+    color: var(--text);
+    font-family: Consolas, "Courier New", monospace;
+}
+
+.compatibility-actions {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 17px;
+}
+
+.compatibility-help-link {
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-align: center;
+    transition: color var(--fast-transition);
+}
+
+.compatibility-help-link:hover {
+    color: var(--cyan);
 }
 
 .compatibility-card p strong {
@@ -1082,6 +1219,16 @@ button {
         flex-direction: column;
     }
 
+    .compatibility-card {
+        grid-template-columns: 1fr;
+    }
+
+    .compatibility-actions {
+        width: 100%;
+        align-items: flex-start;
+        padding-top: 0;
+    }
+
     .site-footer {
         align-items: flex-start;
         flex-direction: column;
@@ -1109,6 +1256,17 @@ button {
 
     .compatibility-status {
         align-items: flex-start;
+    }
+
+    .compatibility-card {
+        padding: 25px 22px;
+    }
+
+    .compatibility-dates,
+    .compatibility-dates > div,
+    .compatibility-actions,
+    .compatibility-actions .button {
+        width: 100%;
     }
 
     .section-heading {
