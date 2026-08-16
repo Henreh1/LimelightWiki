@@ -114,6 +114,13 @@
                     <span>Nexus Mods</span>
                 </a>
 
+                <a
+                    class="navigation-link"
+                    href="multiplayer.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>LimelightMP (Experimental)</span>
+                </a>
+
                 <p class="navigation-label">SUPPORT</p>
 
                 <a
@@ -255,6 +262,7 @@
                     <li>Discord Rich Presence preference</li>
                     <li>Optional resource overlay preference</li>
                     <li>Live-session recovery information</li>
+                    <li>Local LimelightMP session and diagnostic logs</li>
                 </ul>
 
                 <p>
@@ -340,6 +348,36 @@
             </section>
 
             <section
+                id="multiplayer"
+                class="guide-section">
+                <h2>LimelightMP Connections</h2>
+
+                <p>
+                    LimelightMP is an optional experimental feature. When the
+                    user chooses Host or Join, it uses the supplied private
+                    network address to connect two copies of Dead as Disco and
+                    relay the joining player's controls to the host.
+                </p>
+
+                <p>
+                    The short friend code contains the host address, connection
+                    ports, and temporary session authentication information.
+                    Limelight does not publish the code or upload it to a
+                    Limelight service. Players choose how to share it.
+                </p>
+
+                <div class="notice notice-warning">
+                    <strong>TREAT FRIEND CODES AS PRIVATE SESSION INFORMATION</strong>
+
+                    <p>
+                        Send a friend code only to the intended player. Redact
+                        the code and Tailscale address from public screenshots,
+                        videos, diagnostic excerpts, and bug reports.
+                    </p>
+                </div>
+            </section>
+
+            <section
                 id="diagnostics"
                 class="guide-section">
                 <h2>Diagnostic Reports</h2>
@@ -405,6 +443,7 @@
 
                 <ul class="guide-list">
                     <li>Steam for launching and validating Dead as Disco</li>
+                    <li>Tailscale for the optional private LimelightMP route</li>
                     <li>Nexus Mods for catalogue and download functionality</li>
                     <li>Discord for optional Rich Presence</li>
                     <li>GitHub for Limelight source, releases, and documentation</li>
@@ -481,6 +520,7 @@
             <a href="#mod-files">Mod Files</a>
             <a href="#nexus">Nexus Mods</a>
             <a href="#discord">Discord Presence</a>
+            <a href="#multiplayer">LimelightMP</a>
             <a href="#diagnostics">Diagnostic Reports</a>
             <a href="#resource-overlay">Resource Overlay</a>
             <a href="#third-parties">Third Parties</a>

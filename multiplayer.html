@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Learn how to host, join, and safely test the experimental LimelightMP online co-op prototype for Dead as Disco.">
+
+    <title>LimelightMP Experimental Co-op | Limelight Documentation</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/images/limelight-favicon.png">
+
+    <link
+        rel="stylesheet"
+        href="assets/css/styles.css">
+
+    <script
+        src="assets/js/site.js"
+        defer>
+    </script>
+</head>
+
+<body data-page="multiplayer">
+    <a
+        class="skip-link"
+        href="#main-content">
+        Skip to documentation
+    </a>
+
+    <div class="site-shell">
+        <aside
+            id="documentationSidebar"
+            class="sidebar">
+            <div class="sidebar-brand">
+                <a
+                    class="brand-link"
+                    href="index.html"
+                    aria-label="Limelight documentation home">
+                    <span
+                        class="brand-mark"
+                        aria-hidden="true">
+                        <span class="brand-mark-inner">L</span>
+                    </span>
+
+                    <span class="brand-copy">
+                        <strong>LIMELIGHT</strong>
+                        <small>DOCUMENTATION</small>
+                    </span>
+                </a>
+            </div>
+
+            <nav
+                class="documentation-navigation"
+                aria-label="Documentation">
+                <p class="navigation-label">START HERE</p>
+
+                <a
+                    class="navigation-link"
+                    href="index.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Documentation Home</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="getting-started.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Getting Started</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="mod-compatibility.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Mod Compatibility</span>
+                </a>
+
+                <p class="navigation-label">LIVE MODDING</p>
+
+                <a
+                    class="navigation-link"
+                    href="live-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Live Loader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="profiles.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Profiles</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="x19-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>X19 LLoader</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="nexus-mods.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Nexus Mods</span>
+                </a>
+
+                <a
+                    class="navigation-link active"
+                    aria-current="page"
+                    href="multiplayer.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>LimelightMP (Experimental)</span>
+                </a>
+
+                <p class="navigation-label">SUPPORT</p>
+
+                <a
+                    class="navigation-link"
+                    href="testing-bug-reports.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Testing &amp; Bug Reports</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="troubleshooting.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Troubleshooting</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="privacy.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Privacy</span>
+                </a>
+
+                <a
+                    class="navigation-link"
+                    href="credits.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Credits</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-status">
+                <span class="status-dot" aria-hidden="true"></span>
+
+                <div>
+                    <strong>EARLY ACCESS DOCS</strong>
+                    <span>Documentation for Limelight Early Access.</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page-column">
+            <header class="topbar">
+                <button
+                    id="menuToggle"
+                    class="menu-button"
+                    type="button"
+                    aria-label="Open documentation navigation"
+                    aria-controls="documentationSidebar"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="topbar-title">
+                    <span class="topbar-diamond" aria-hidden="true"></span>
+                    <strong>LIMELIGHT</strong>
+                    <span>/</span>
+                    <span>DEAD AS DISCO MOD MANAGER</span>
+                </div>
+
+                <a
+                    class="topbar-link"
+                    href="https://github.com/Henreh1/Limelight"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    VIEW ON GITHUB
+                </a>
+            </header>
+
+            <main
+                id="main-content"
+                class="documentation-page">
+                <div class="breadcrumbs">
+                    <a href="index.html">DOCUMENTATION</a>
+                    <span>/</span>
+                    <span>LIMELIGHTMP</span>
+                </div>
+
+                <header class="documentation-hero">
+                    <span class="eyebrow">EXPERIMENTAL ONLINE CO-OP</span>
+
+                    <h1>SHARE THE DANCE FLOOR</h1>
+
+                    <p>
+                        LimelightMP is an early two-player co-op prototype built
+                        into Limelight. The host plays Charlie, a friend joins as
+                        Chuckles, and both computers run and render their own copy
+                        of Dead as Disco.
+                    </p>
+                </header>
+
+                <div class="article-layout">
+                    <article class="article">
+                        <section
+                            id="experimental-warning"
+                            class="guide-section">
+                            <h2>Experimental Means Experimental</h2>
+
+                            <div class="notice notice-warning">
+                                <strong>EXPECT BUGS, DISCONNECTS, AND INCOMPLETE FEATURES</strong>
+
+                                <p>
+                                    LimelightMP is not finished multiplayer support
+                                    and is not a replacement for an official online
+                                    mode. Test it only with a friend who understands
+                                    that sessions may need to be restarted.
+                                </p>
+                            </div>
+
+                            <p>
+                                The current prototype combines Dead as Disco's
+                                working couch co-op players with a private online
+                                input relay and Unreal networking. Gameplay remains
+                                host-authoritative while the joining player renders
+                                the replicated session locally. It is not video
+                                streaming or remote desktop play.
+                            </p>
+                        </section>
+
+                        <section
+                            id="requirements"
+                            class="guide-section">
+                            <h2>Before You Start</h2>
+
+                            <ul class="guide-list">
+                                <li>Both players need the same Limelight test build.</li>
+                                <li>Both players need the same supported Dead as Disco build.</li>
+                                <li>Both players should close the game before choosing Host or Join.</li>
+                                <li>Both computers need Tailscale installed, connected, and permitted to reach each other.</li>
+                                <li>Keep Limelight open for the whole session.</li>
+                                <li>Use one host and one joining player only.</li>
+                            </ul>
+
+                            <div class="notice">
+                                <strong>USE A PRIVATE TAILSCALE ROUTE</strong>
+
+                                <p>
+                                    Share the host computer with the friend who is
+                                    testing, not an entire network when a single
+                                    device share is available. Limelight's friend
+                                    code contains connection information, so send it
+                                    privately and redact it from public screenshots.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section
+                            id="host"
+                            class="guide-section">
+                            <h2>Host a Session</h2>
+
+                            <ol class="guide-list">
+                                <li>Open Limelight and select LimelightMP.</li>
+                                <li>Confirm the setup check is ready.</li>
+                                <li>Select <strong>Host and Launch</strong>.</li>
+                                <li>Copy the complete short friend code and send it privately.</li>
+                                <li>Enter the Dive Bar after Dead as Disco opens.</li>
+                                <li>Press <span class="inline-code">Ctrl+Shift+F5</span> once to begin hosting.</li>
+                                <li>Wait for Limelight to report that the host is listening.</li>
+                            </ol>
+
+                            <p>
+                                The host controls Charlie and remains responsible
+                                for level and song selection. Do not start travelling
+                                while the joining player is still connecting.
+                            </p>
+                        </section>
+
+                        <section
+                            id="join"
+                            class="guide-section">
+                            <h2>Join a Friend</h2>
+
+                            <ol class="guide-list">
+                                <li>Open the same Limelight build and select LimelightMP.</li>
+                                <li>Paste the host's complete friend code.</li>
+                                <li>Select <strong>Join and Launch</strong>.</li>
+                                <li>Leave Limelight open while the local game starts.</li>
+                                <li>Wait until Limelight reports that the host welcomed the client.</li>
+                                <li>Confirm that Chuckles is visible and responds before the host changes level.</li>
+                            </ol>
+
+                            <p>
+                                The joining computer renders its own game. Normal
+                                internet latency still applies, but the picture is
+                                not being streamed from the host's screen.
+                            </p>
+                        </section>
+
+                        <section
+                            id="session-controls"
+                            class="guide-section">
+                            <h2>Useful Session Controls</h2>
+
+                            <ul class="guide-list">
+                                <li><span class="inline-code">Ctrl+Shift+F5</span> starts hosting from the Dive Bar.</li>
+                                <li><span class="inline-code">Ctrl+Shift+F10</span> teleports Chuckles beside Charlie if a transition separates the players.</li>
+                                <li>The host should select levels, modes, and songs only after both players are ready.</li>
+                                <li>Close both games before changing multiplayer roles or switching builds.</li>
+                            </ul>
+                        </section>
+
+                        <section
+                            id="known-limitations"
+                            class="guide-section">
+                            <h2>Known Limitations in 0.1.0</h2>
+
+                            <p>
+                                The following systems are implemented but remain
+                                under active verification. A successful test in one
+                                arena does not yet guarantee the same result in every
+                                story segment.
+                            </p>
+
+                            <ul class="guide-list">
+                                <li>HUD visibility can change after map or sub-level transitions.</li>
+                                <li>Client skill and appearance menus do not yet behave consistently.</li>
+                                <li>Music may start late or fail to recover in some levels.</li>
+                                <li>Beat timing can differ from the vanilla single-player presentation.</li>
+                                <li>The client may see a black screen during a sub-level transition.</li>
+                                <li>Client movement can temporarily use the wrong camera direction.</li>
+                                <li>Replicated movement, attacks, animations, particles, and warning effects may appear late or fail to play.</li>
+                                <li>Level travel may reconnect the client instead of remaining seamless.</li>
+                                <li>Live-switched character models may not appear identically for both players.</li>
+                            </ul>
+
+                            <div class="notice notice-warning">
+                                <strong>DO NOT TREAT A WORKAROUND AS A FIX</strong>
+
+                                <p>
+                                    If restarting, teleporting, or reopening a menu
+                                    makes an issue disappear, include that detail in
+                                    the report. It helps distinguish a presentation
+                                    recovery from a real multiplayer correction.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section
+                            id="reporting"
+                            class="guide-section">
+                            <h2>Report One Session Clearly</h2>
+
+                            <p>
+                                When a test fails, avoid running many different
+                                experiments before collecting evidence. Close both
+                                games normally, preserve the newest crash dump if one
+                                was created, and create a Limelight diagnostic report.
+                            </p>
+
+                            <ul class="guide-list">
+                                <li>Say which computer hosted and which joined.</li>
+                                <li>Name the level, mode, and song.</li>
+                                <li>Describe the last action that worked and the first action that failed.</li>
+                                <li>State whether the problem affected the host, client, or both.</li>
+                                <li>Include whether a controller or mouse and keyboard was used.</li>
+                                <li>Attach the newest crash dump when a fatal error appears.</li>
+                            </ul>
+
+                            <a
+                                class="next-page-card"
+                                href="testing-bug-reports.html">
+                                <small>NEXT GUIDE</small>
+                                <strong>Testing &amp; Bug Reports</strong>
+                            </a>
+                        </section>
+                    </article>
+
+                    <aside
+                        class="table-of-contents"
+                        aria-label="On this page">
+                        <strong>ON THIS PAGE</strong>
+
+                        <a href="#experimental-warning">Experimental Warning</a>
+                        <a href="#requirements">Before You Start</a>
+                        <a href="#host">Host a Session</a>
+                        <a href="#join">Join a Friend</a>
+                        <a href="#session-controls">Session Controls</a>
+                        <a href="#known-limitations">Known Limitations</a>
+                        <a href="#reporting">Report a Session</a>
+                    </aside>
+                </div>
+            </main>
+
+            <footer class="site-footer">
+                <div>
+                    <strong>LIMELIGHT</strong>
+                    <span>Made by Henreh</span>
+                </div>
+
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="credits.html">Credits</a>
+                    <a href="troubleshooting.html">Support</a>
+                    <a href="https://github.com/Henreh1" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
