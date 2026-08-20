@@ -1804,3 +1804,306 @@ body.lightbox-open {
         bottom: 8px;
     }
 }
+
+/* I give the development story its own timeline language so it feels personal without leaving the Limelight design family. */
+
+.journey-intro {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 26px 0 8px;
+}
+
+.journey-intro div {
+    padding: 17px 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--medium-radius);
+    background: var(--panel);
+}
+
+.journey-intro strong,
+.journey-intro span {
+    display: block;
+}
+
+.journey-intro strong {
+    color: var(--pink);
+    font-family:
+        "Arial Narrow",
+        "Segoe UI",
+        sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.journey-intro span {
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.journey-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 12px;
+    color: var(--cyan);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.09em;
+}
+
+.journey-date::before {
+    width: 9px;
+    height: 9px;
+    border: 2px solid var(--pink);
+    background: var(--pink-soft);
+    content: "";
+    transform: rotate(45deg);
+}
+
+.journey-quote {
+    position: relative;
+    margin: 5px 0 29px;
+    padding: 29px 31px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 47, 163, 0.42);
+    border-radius: var(--large-radius);
+    background:
+        linear-gradient(
+            115deg,
+            rgba(255, 47, 163, 0.14),
+            rgba(49, 221, 248, 0.06)
+        ),
+        var(--panel);
+}
+
+.journey-quote::after {
+    position: absolute;
+    top: -28px;
+    right: 17px;
+    color: rgba(255, 255, 255, 0.055);
+    content: "\201C";
+    font-family: Georgia, serif;
+    font-size: 150px;
+    line-height: 1;
+}
+
+.journey-quote p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: var(--text);
+    font-family:
+        "Arial Narrow",
+        "Segoe UI",
+        sans-serif;
+    font-size: clamp(25px, 4vw, 39px);
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+}
+
+.journey-quote cite {
+    display: block;
+    margin-top: 12px;
+    color: var(--cyan);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+}
+
+.journey-video {
+    margin: 25px 0 29px;
+    overflow: hidden;
+    border: 1px solid var(--border-bright);
+    border-radius: var(--medium-radius);
+    background: var(--panel);
+}
+
+.journey-video-frame {
+    position: relative;
+    display: grid;
+    min-height: 260px;
+    place-items: center;
+    overflow: hidden;
+    padding: 30px;
+    background:
+        linear-gradient(rgba(6, 7, 17, 0.45), rgba(6, 7, 17, 0.82)),
+        repeating-linear-gradient(
+            135deg,
+            rgba(49, 221, 248, 0.055) 0,
+            rgba(49, 221, 248, 0.055) 1px,
+            transparent 1px,
+            transparent 18px
+        ),
+        radial-gradient(circle at 50% 45%, rgba(255, 47, 163, 0.2), transparent 19rem),
+        #090b17;
+    text-align: center;
+}
+
+.journey-video-badge,
+.journey-video-status {
+    position: absolute;
+    top: 16px;
+    padding: 6px 9px;
+    border-radius: 999px;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.journey-video-badge {
+    left: 16px;
+    color: var(--cyan);
+    border: 1px solid rgba(49, 221, 248, 0.28);
+    background: rgba(49, 221, 248, 0.1);
+}
+
+.journey-video-status {
+    right: 16px;
+    color: var(--muted);
+    border: 1px solid var(--border-bright);
+    background: rgba(18, 22, 43, 0.88);
+}
+
+.journey-video-centre {
+    position: relative;
+    z-index: 1;
+}
+
+.journey-play {
+    display: grid;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 18px;
+    place-items: center;
+    border: 1px solid var(--pink);
+    border-radius: 50%;
+    color: #ffffff;
+    background: var(--pink);
+    box-shadow: 0 0 0 10px rgba(255, 47, 163, 0.08);
+    font-size: 24px;
+    line-height: 1;
+}
+
+.journey-video-centre strong,
+.journey-video-centre span {
+    display: block;
+}
+
+.journey-video-centre strong {
+    color: var(--text);
+    font-size: 21px;
+}
+
+.journey-video-centre span {
+    margin-top: 4px;
+    color: var(--subtle);
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 11px;
+}
+
+.journey-video-caption {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 20px;
+    padding: 20px 22px;
+    border-top: 1px solid var(--border);
+}
+
+.journey-video-caption time {
+    color: var(--pink);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+}
+
+.journey-video-caption p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.journey-sketch .documentation-image-button {
+    padding: 12px;
+    background: #ffffff;
+}
+
+.journey-sketch img {
+    border-radius: calc(var(--medium-radius) - 5px);
+}
+
+.journey-sketch figcaption {
+    font-style: italic;
+}
+
+.journey-answer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 24px 0;
+}
+
+.journey-answer div {
+    padding: 23px;
+    border: 1px solid var(--border);
+    border-radius: var(--medium-radius);
+    background: var(--panel);
+}
+
+.journey-answer strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--cyan);
+    font-size: 20px;
+}
+
+.journey-answer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
+    .journey-intro,
+    .journey-answer {
+        grid-template-columns: 1fr;
+    }
+
+    .journey-video-caption {
+        grid-template-columns: 1fr;
+        gap: 7px;
+    }
+
+    .journey-video-frame {
+        min-height: 230px;
+        padding: 58px 20px 25px;
+    }
+
+    .journey-video-status {
+        top: 48px;
+        right: auto;
+        left: 16px;
+    }
+}
+
+.journey-video-embed {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+    padding: 0;
+    background: #000000;
+}
+
+.journey-video-embed iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (max-width: 700px) {
+    .journey-video-embed {
+        min-height: 0;
+        padding: 0;
+    }
+}

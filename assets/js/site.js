@@ -39,6 +39,7 @@ function updateActiveNavigationLink() {
         "x19-loader.html": "x19-loader",
         "nexus-mods.html": "nexus-mods",
         "multiplayer.html": "multiplayer",
+        "development-journey.html": "development-journey",
         "testing-bug-reports.html": "testing-bug-reports",
         "troubleshooting.html": "troubleshooting",
         "privacy.html": "privacy",

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="The development journey from Limelight mod manager to the native bridge, Live Loader, X19 and LimelightMP.">
+
+    <title>Development Journey | Limelight Documentation</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/images/limelight-favicon.png">
+
+    <link
+        rel="stylesheet"
+        href="assets/css/styles.css">
+
+    <script
+        src="assets/js/site.js"
+        defer>
+    </script>
+</head>
+
+<body data-page="development-journey">
+    <a
+        class="skip-link"
+        href="#main-content">
+        Skip to the development journey
+    </a>
+
+    <div class="site-shell">
+        <!-- I keep this page in the normal documentation shell so the story still feels like part of Limelight. -->
+        <aside
+            id="documentationSidebar"
+            class="sidebar">
+            <div class="sidebar-brand">
+                <a
+                    class="brand-link"
+                    href="index.html"
+                    aria-label="Limelight documentation home">
+                    <span
+                        class="brand-mark"
+                        aria-hidden="true">
+                        <span class="brand-mark-inner">L</span>
+                    </span>
+
+                    <span class="brand-copy">
+                        <strong>LIMELIGHT</strong>
+                        <small>DOCUMENTATION</small>
+                    </span>
+                </a>
+            </div>
+
+            <nav
+                class="documentation-navigation"
+                aria-label="Documentation">
+                <p class="navigation-label">BEHIND THE CURTAIN</p>
+
+                <a
+                    class="navigation-link"
+                    href="development-journey.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Development Journey</span>
+                </a>
+
+                <p class="navigation-label">START HERE</p>
+
+                <a class="navigation-link" href="index.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Documentation Home</span>
+                </a>
+
+                <a class="navigation-link" href="getting-started.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Getting Started</span>
+                </a>
+
+                <a class="navigation-link" href="mod-compatibility.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Mod Compatibility</span>
+                </a>
+
+                <p class="navigation-label">LIVE MODDING</p>
+
+                <a class="navigation-link" href="live-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Live Loader</span>
+                </a>
+
+                <a class="navigation-link" href="profiles.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Profiles</span>
+                </a>
+
+                <a class="navigation-link" href="x19-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>X19 LLoader</span>
+                </a>
+
+                <a class="navigation-link" href="nexus-mods.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Nexus Mods</span>
+                </a>
+
+                <a class="navigation-link" href="multiplayer.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>LimelightMP (Experimental)</span>
+                </a>
+
+                <p class="navigation-label">SUPPORT</p>
+
+                <a class="navigation-link" href="testing-bug-reports.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Testing &amp; Bug Reports</span>
+                </a>
+
+                <a class="navigation-link" href="troubleshooting.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Troubleshooting</span>
+                </a>
+
+                <a class="navigation-link" href="privacy.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Privacy</span>
+                </a>
+
+                <a class="navigation-link" href="credits.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Credits</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-status">
+                <span class="status-dot" aria-hidden="true"></span>
+
+                <div>
+                    <strong>EARLY ACCESS DOCS</strong>
+                    <span>Documentation for Limelight Early Access.</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page-column">
+            <header class="topbar">
+                <button
+                    id="menuToggle"
+                    class="menu-button"
+                    type="button"
+                    aria-label="Open documentation navigation"
+                    aria-controls="documentationSidebar"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="topbar-title">
+                    <span class="topbar-diamond" aria-hidden="true"></span>
+                    <strong>LIMELIGHT</strong>
+                    <span>/</span>
+                    <span>DEVELOPMENT JOURNEY</span>
+                </div>
+
+                <a
+                    class="topbar-link"
+                    href="https://github.com/Henreh1/Limelight"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    VIEW ON GITHUB
+                </a>
+            </header>
+
+            <main
+                id="main-content"
+                class="documentation-page">
+                <div class="breadcrumbs">
+                    <a href="index.html">DOCUMENTATION</a>
+                    <span>/</span>
+                    <span>DEVELOPMENT JOURNEY</span>
+                </div>
+
+                <header class="documentation-hero">
+                    <span class="eyebrow">BEHIND THE CURTAIN</span>
+
+                    <h1>FROM MOD MANAGER TO MULTIPLAYER</h1>
+
+                    <p>
+                        Limelight did not begin with a plan for runtime model
+                        swapping or online co-op. Each part of the family grew
+                        from one question: what if I could make this work too?
+                    </p>
+
+                    <div class="journey-intro" aria-label="Journey summary">
+                        <div>
+                            <strong>5</strong>
+                            <span>early development videos</span>
+                        </div>
+
+                        <div>
+                            <strong>3</strong>
+                            <span>highly scientific drawings</span>
+                        </div>
+
+                        <div>
+                            <strong>1</strong>
+                            <span>increasingly questionable family</span>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="article-layout">
+                    <article class="article">
+                        <!-- I keep the milestones chronological so every problem naturally introduces the feature that solved it. -->
+                        <section
+                            id="origins"
+                            class="guide-section">
+                            <h2>It Started as a Mod Manager</h2>
+
+                            <p>
+                                Limelight began with a much smaller purpose: make
+                                modding <em>Dead as Disco</em> easier. Installing
+                                replacement archives by hand meant moving package
+                                files around, remembering what was enabled and
+                                untangling everything again when something went
+                                wrong.
+                            </p>
+
+                            <p>
+                                The original app brought imports, mod organisation,
+                                profiles, launch modes and compatibility checks into
+                                one place. At this point Limelight lived almost
+                                entirely outside the game. It could prepare the
+                                stage, but once Unreal was running it could not
+                                change the performance.
+                            </p>
+
+                            <figure class="documentation-image journey-sketch">
+                                <button
+                                    class="documentation-image-button"
+                                    type="button"
+                                    data-lightbox
+                                    data-lightbox-caption="The hand-drawn Limelight family tree connecting the app to its modes and experiments."
+                                    aria-label="Open the Limelight family drawing at full size">
+                                    <img
+                                        src="assets/images/development/limelight-family.png"
+                                        alt="Hand-drawn family tree connecting Limelight to My Mods, Live Loader, X19, Normal Mode and LimelightMP">
+                                    <span class="documentation-image-action">OPEN FULL SIZE</span>
+                                </button>
+
+                                <figcaption>
+                                    <strong>THE LIMELIGHT FAMILY</strong>
+                                    One launcher, several increasingly questionable ideas.
+                                </figcaption>
+                            </figure>
+                        </section>
+
+                        <section
+                            id="native-bridge"
+                            class="guide-section">
+                            <h2>Crossing into the Running Game</h2>
+
+                            <p>
+                                A desktop mod manager can copy files and launch a
+                                game, but it cannot safely tell a live Unreal
+                                character to replace its mesh. That gap led to the
+                                native bridge: the part of Limelight that works
+                                inside the running game while the app remains outside
+                                as the organiser and interface.
+                            </p>
+
+                            <p>
+                                UE4SS provided the runtime foundation. Lua handled
+                                session coordination and the native C++ bridge
+                                exposed the focused operations Limelight needed.
+                                Together they created a route from a button in the
+                                app to a real object inside <em>Dead as Disco</em>.
+                            </p>
+
+                            <div class="notice">
+                                <strong>WHY A BRIDGE?</strong>
+
+                                <p>
+                                    Limelight decides what should happen. The bridge
+                                    performs the Unreal-specific work where the game
+                                    can see it. Keeping those responsibilities apart
+                                    let the interface grow without burying low-level
+                                    runtime behaviour inside the app.
+                                </p>
+                            </div>
+
+                            <p>
+                                What began as an experimental connection gradually
+                                gained startup discovery, health checks, level-change
+                                locks, package-cache handling and safer recovery. That
+                                bridge became the foundation for everything that
+                                followed.
+                            </p>
+                        </section>
+
+                        <section
+                            id="first-hotswap"
+                            class="guide-section">
+                            <span class="journey-date">
+                                <time datetime="2026-07-15">15 JULY 2026</time>
+                            </span>
+
+                            <h2>The First Live Model Swap</h2>
+
+                            <p>
+                                The first successful hotswap was not polished, but
+                                it answered the important question. A replacement
+                                model could be changed while the game was still
+                                running. There was no return to desktop and no full
+                                restart between mods.
+                            </p>
+
+                            <div class="journey-video">
+                                <div class="journey-video-frame journey-video-embed">
+                                    <iframe
+                                        src="https://www.youtube-nocookie.com/embed/LSrwK13YQtY"
+                                        title="First live model hotswap"
+                                        loading="lazy"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+
+                                <div class="journey-video-caption">
+                                    <time datetime="2026-07-15">15 JULY 2026</time>
+                                    <p>
+                                        The first model swap performed while
+                                        <em>Dead as Disco</em> remained open, proving
+                                        the core Live Loader idea could work.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <h3>Into the interface on the same day</h3>
+
+                            <p>
+                                A technical demonstration was only the beginning.
+                                Later that day I wired the experiment into Limelight,
+                                turning a development command into the first model
+                                swap controlled through the app's interface.
+                            </p>
+
+                            <div class="journey-video">
+                                <div class="journey-video-frame journey-video-embed">
+                                    <iframe
+                                        src="https://www.youtube-nocookie.com/embed/L4PA2EpAhTk"
+                                        title="First UI-controlled model hotswap"
+                                        loading="lazy"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+
+                                <div class="journey-video-caption">
+                                    <time datetime="2026-07-15">15 JULY 2026</time>
+                                    <p>
+                                        The first replacement selected and applied
+                                        through Limelight rather than triggered
+                                        directly through development tooling.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section
+                            id="live-loader"
+                            class="guide-section">
+                            <h2>Turning the Trick into a Live Loader</h2>
+
+                            <p>
+                                Making a model appear once was not the same as making
+                                live switching dependable. Early repeated swaps could
+                                leave models completely black because changing the
+                                skeletal mesh alone did not correctly refresh its
+                                materials, textures and cached packages.
+                            </p>
+
+                            <p>
+                                A later game update also moved the mesh that mattered.
+                                The old <span class="inline-code">SK_Charlie</span>
+                                target remained on the main menu while gameplay used
+                                a different active mesh. The loader had to stop
+                                assuming one fixed object and find the character that
+                                was actually performing in the current level.
+                            </p>
+
+                            <p>
+                                Solving those failures shaped the regular Live Loader:
+                                inspect the mod, identify its target, mount the new
+                                containers, release stale package state, refresh the
+                                live mesh and its materials, then report success or a
+                                useful error back to Limelight.
+                            </p>
+
+                            <figure class="documentation-image journey-sketch">
+                                <button
+                                    class="documentation-image-button"
+                                    type="button"
+                                    data-lightbox
+                                    data-lightbox-caption="The hand-drawn Live Loader flow from an updated replacement mod to the active in-game character."
+                                    aria-label="Open the Live Loader drawing at full size">
+                                    <img
+                                        src="assets/images/development/live-loader-simple.png"
+                                        alt="Hand-drawn diagram showing updated mod files travelling through Limelight and the native bridge into the running game">
+                                    <span class="documentation-image-action">OPEN FULL SIZE</span>
+                                </button>
+
+                                <figcaption>
+                                    <strong>THE LIVE LOADER</strong>
+                                    The highly advanced blueprint for changing a
+                                    replacement without restarting the game.
+                                </figcaption>
+                            </figure>
+
+                            <p>
+                                Support also grew beyond one kind of package. CRM and
+                                CSL replacements could take part in the same workflow,
+                                while improved inspection began identifying Charlie,
+                                Arora, Hemlock, Bouncer, Prophet, Dex and other targets
+                                instead of treating every replacement as Charlie.
+                            </p>
+                        </section>
+
+                        <section
+                            id="x19"
+                            class="guide-section">
+                            <span class="journey-date">
+                                <time datetime="2026-07-18">18 JULY 2026</time>
+                            </span>
+
+                            <h2>X19 Takes Live Switching Off the Desktop</h2>
+
+                            <p>
+                                X19 was developed only after the regular Live Loader
+                                had been hammered into something solid. The goal was
+                                not to replace that workflow, but to make repeated
+                                switching feel immediate during play.
+                            </p>
+
+                            <p>
+                                Instead of returning to Limelight for every change,
+                                X19 lets a player rotate through an ordered or shuffled
+                                group using a simple keyboard keybind or controller
+                                button.
+                            </p>
+
+                            <div class="journey-video">
+                                <div class="journey-video-frame journey-video-embed">
+                                    <iframe
+                                        src="https://www.youtube-nocookie.com/embed/-5L1MNwmQyM"
+                                        title="First X19 Loader Mode trial"
+                                        loading="lazy"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+
+                                <div class="journey-video-caption">
+                                    <time datetime="2026-07-18">18 JULY 2026</time>
+                                    <p>
+                                        The first trial of X19's keybind and controller
+                                        driven switching, built on the now-reliable
+                                        regular Live Loader.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section
+                            id="limelightmp"
+                            class="guide-section">
+                            <h2>The LimelightMP Journey</h2>
+
+                            <blockquote class="journey-quote">
+                                <p>“Is it possible? Am I capable?”</p>
+                                <cite>I INTENDED TO ANSWER BOTH.</cite>
+                            </blockquote>
+
+                            <span class="journey-date">
+                                <time datetime="2026-08-14">14 AUGUST 2026</time>
+                            </span>
+
+                            <h3>The local co-op session that sparked it</h3>
+
+                            <p>
+                                The first successful local co-op session was played
+                                entirely by me. I controlled one character with a
+                                controller and the other with keyboard and mouse. It
+                                was awkward, but it proved the game's real couch co-op
+                                framework was there to build upon.
+                            </p>
+
+                            <p>
+                                If both local players could already exist in one
+                                session, perhaps the second set of inputs did not have
+                                to come from the same desk. That thought became the
+                                framework idea for LimelightMP.
+                            </p>
+
+                            <div class="journey-video">
+                                <div class="journey-video-frame journey-video-embed">
+                                    <iframe
+                                        src="https://www.youtube-nocookie.com/embed/4CZslwYb4GI"
+                                        title="First local co-op session"
+                                        loading="lazy"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+
+                                <div class="journey-video-caption">
+                                    <time datetime="2026-08-14">14 AUGUST 2026</time>
+                                    <p>
+                                        One person, one controller, one keyboard and
+                                        mouse, and the local co-op experiment that
+                                        sparked the structure of LimelightMP.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <figure class="documentation-image journey-sketch">
+                                <button
+                                    class="documentation-image-button"
+                                    type="button"
+                                    data-lightbox
+                                    data-lightbox-caption="The original hand-drawn LimelightMP plan for remote input and locally rendered co-op."
+                                    aria-label="Open the LimelightMP networking drawing at full size">
+                                    <img
+                                        src="assets/images/development/limelightmp-simple.png"
+                                        alt="Hand-drawn LimelightMP diagram showing client input travelling to the host and replicated world state returning to the client">
+                                    <span class="documentation-image-action">OPEN FULL SIZE</span>
+                                </button>
+
+                                <figcaption>
+                                    <strong>THE FIRST LIMELIGHTMP PLAN</strong>
+                                    Host-owned local co-op, remote client input and
+                                    local rendering on both PCs. Lots of jank.
+                                </figcaption>
+                            </figure>
+
+                            <span class="journey-date">
+                                <time datetime="2026-08-16">16 AUGUST 2026</time>
+                            </span>
+
+                            <h3>The first “online” game</h3>
+
+                            <p>
+                                The first online experiment sent my inputs to a
+                                friend's PC while I watched their split-screen game
+                                through Discord. It technically worked, which was
+                                exciting, but the problems were impossible to ignore.
+                            </p>
+
+                            <ul class="guide-list">
+                                <li>Input had to travel to the host before the game could react.</li>
+                                <li>The returning Discord video added another layer of delay.</li>
+                                <li>I watched the host's split screen instead of rendering my own view.</li>
+                                <li>Only the host needed to run a copy of the game.</li>
+                            </ul>
+
+                            <p>
+                                It proved that remote input was possible, but it did
+                                not feel like two people truly playing together. I
+                                felt I could do better.
+                            </p>
+
+                            <div class="journey-video">
+                                <div class="journey-video-frame journey-video-embed">
+                                    <iframe
+                                        src="https://www.youtube-nocookie.com/embed/1aAkbKlMHRc"
+                                        title="First online co-op experiment"
+                                        loading="lazy"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+
+                                <div class="journey-video-caption">
+                                    <time datetime="2026-08-16">16 AUGUST 2026</time>
+                                    <p>
+                                        Inputs travelled to a friend's PC while the
+                                        returning split-screen view came through
+                                        Discord: online in the loosest possible sense.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section
+                            id="today"
+                            class="guide-section">
+                            <h2>From a Stream to Two Local Games</h2>
+
+                            <p>
+                                LimelightMP changed the experiment so both players run
+                                and render their own copy of <em>Dead as Disco</em>.
+                                The host owns the authoritative vanilla couch co-op
+                                world. The client sends authenticated input over the
+                                private Tailscale route, and the host's controller
+                                bridge applies it to player two: Chuckles.
+                            </p>
+
+                            <p>
+                                Unreal replicates the host-owned world back to the
+                                client, which draws its own view with a local camera.
+                                No Discord gameplay stream is required. The same
+                                willingness to cross from Limelight into the running
+                                game for Live Loader now carries a remote friend's
+                                input into a real local co-op slot.
+                            </p>
+
+                            <div class="journey-answer">
+                                <div>
+                                    <strong>Is it possible?</strong>
+                                    <p>
+                                        The working host, client, relay and native
+                                        controller bridge answered yes.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <strong>Am I capable?</strong>
+                                    <p>
+                                        Every broken first attempt, repaired material
+                                        and questionable drawing answered that too.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="notice notice-warning">
+                                <strong>THE JOURNEY IS NOT FINISHED</strong>
+
+                                <p>
+                                    LimelightMP remains experimental. Level changes,
+                                    cameras, dialogue, rhythm synchronisation, audio,
+                                    player-local menus and replicated effects still
+                                    need work. This page records progress, not a claim
+                                    that the final destination has been reached.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section
+                            id="next"
+                            class="guide-section">
+                            <h2>Whatever Joins the Family Next</h2>
+
+                            <p>
+                                Limelight grew because each solved problem revealed a
+                                more interesting one behind it. A mod organiser needed
+                                launch modes. Runtime switching needed a native bridge.
+                                A reliable Live Loader made X19 possible. Local co-op
+                                and remote input eventually gave Chuckles a way onto
+                                another PC.
+                            </p>
+
+                            <p>
+                                The next steps are broader replacement support, a more
+                                resilient Live Loader, localisation, continued
+                                LimelightMP experiments and whatever questionable idea
+                                wanders backstage next.
+                            </p>
+
+                            <a
+                                class="next-page-card"
+                                href="multiplayer.html">
+                                <span>
+                                    <small>CONTINUE THE STORY</small>
+                                    <strong>Read the LimelightMP test guide</strong>
+                                </span>
+
+                                <span class="next-page-arrow" aria-hidden="true">→</span>
+                            </a>
+                        </section>
+                    </article>
+
+                    <aside
+                        class="table-of-contents"
+                        aria-label="On this page">
+                        <strong>ON THIS PAGE</strong>
+
+                        <a href="#origins">The Original Mod Manager</a>
+                        <a href="#native-bridge">The Native Bridge</a>
+                        <a href="#first-hotswap">First Hotswaps</a>
+                        <a href="#live-loader">Solidifying Live Loader</a>
+                        <a href="#x19">X19 Loader Mode</a>
+                        <a href="#limelightmp">The LimelightMP Journey</a>
+                        <a href="#today">Two Local Games</a>
+                        <a href="#next">What Comes Next</a>
+                    </aside>
+                </div>
+            </main>
+
+            <footer class="site-footer">
+                <div>
+                    <strong>LIMELIGHT</strong>
+                    <span>Made by Henreh</span>
+                </div>
+
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="credits.html">Credits</a>
+                    <a href="troubleshooting.html">Support</a>
+                    <a
+                        href="https://github.com/Henreh1"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
