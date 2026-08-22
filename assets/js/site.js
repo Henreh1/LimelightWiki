@@ -56,7 +56,8 @@ function updateActiveNavigationLink() {
             .pop();
 
         const isCurrentPage =
-            pageByFile[linkFile] === currentPage;
+            (pageByFile[linkFile] || linkFile?.replace(/\.html$/i, "")) ===
+            currentPage;
 
         link.classList.toggle("active", isCurrentPage);
 
