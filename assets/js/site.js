@@ -34,6 +34,7 @@ function updateActiveNavigationLink() {
         "index.html": "home",
         "getting-started.html": "getting-started",
         "mod-compatibility.html": "mod-compatibility",
+        "arenakit.html": "arenakit",
         "live-loader.html": "live-loader",
         "profiles.html": "profiles",
         "x19-loader.html": "x19-loader",

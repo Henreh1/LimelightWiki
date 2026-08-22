@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Create, update, build and package custom Dead as Disco arenas with Limelight ArenaKit.">
+
+    <title>ArenaKit | Limelight Documentation</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/images/limelight-favicon.png">
+
+    <link
+        rel="stylesheet"
+        href="assets/css/styles.css">
+
+    <script
+        src="assets/js/site.js"
+        defer>
+    </script>
+</head>
+
+<body data-page="arenakit">
+    <a
+        class="skip-link"
+        href="#main-content">
+        Skip to the ArenaKit guide
+    </a>
+
+    <div class="site-shell">
+        <aside
+            id="documentationSidebar"
+            class="sidebar">
+            <div class="sidebar-brand">
+                <a
+                    class="brand-link"
+                    href="index.html"
+                    aria-label="Limelight documentation home">
+                    <span
+                        class="brand-mark"
+                        aria-hidden="true">
+                        <span class="brand-mark-inner">L</span>
+                    </span>
+
+                    <span class="brand-copy">
+                        <strong>LIMELIGHT</strong>
+                        <small>DOCUMENTATION</small>
+                    </span>
+                </a>
+            </div>
+
+            <nav
+                class="documentation-navigation"
+                aria-label="Documentation">
+                <p class="navigation-label">BEHIND THE CURTAIN</p>
+
+                <a
+                    class="navigation-link"
+                    href="development-journey.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Development Journey</span>
+                </a>
+
+                <p class="navigation-label">START HERE</p>
+
+                <a class="navigation-link" href="index.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Documentation Home</span>
+                </a>
+
+                <a class="navigation-link" href="getting-started.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Getting Started</span>
+                </a>
+
+                <a class="navigation-link" href="mod-compatibility.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Mod Compatibility</span>
+                </a>
+
+                <p class="navigation-label">ARENA AUTHORING</p>
+
+                <a
+                    class="navigation-link active"
+                    aria-current="page"
+                    href="arenakit.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>ArenaKit</span>
+                </a>
+
+                <p class="navigation-label">LIVE MODDING</p>
+
+                <a class="navigation-link" href="live-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Live Loader</span>
+                </a>
+
+                <a class="navigation-link" href="profiles.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Profiles</span>
+                </a>
+
+                <a class="navigation-link" href="x19-loader.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>X19 LLoader</span>
+                </a>
+
+                <a class="navigation-link" href="nexus-mods.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Nexus Mods</span>
+                </a>
+
+                <a class="navigation-link" href="multiplayer.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>LimelightMP (Experimental)</span>
+                </a>
+
+                <p class="navigation-label">SUPPORT</p>
+
+                <a class="navigation-link" href="testing-bug-reports.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Testing &amp; Bug Reports</span>
+                </a>
+
+                <a class="navigation-link" href="troubleshooting.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Troubleshooting</span>
+                </a>
+
+                <a class="navigation-link" href="privacy.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Privacy</span>
+                </a>
+
+                <a class="navigation-link" href="credits.html">
+                    <span class="navigation-diamond" aria-hidden="true"></span>
+                    <span>Credits</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-status">
+                <span class="status-dot" aria-hidden="true"></span>
+
+                <div>
+                    <strong>ARENAKIT 0.1.0</strong>
+                    <span>Arena mods are back.</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page-column">
+            <header class="topbar">
+                <button
+                    id="menuToggle"
+                    class="menu-button"
+                    type="button"
+                    aria-label="Open documentation navigation"
+                    aria-controls="documentationSidebar"
+                    aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="topbar-title">
+                    <span class="topbar-diamond" aria-hidden="true"></span>
+                    <strong>LIMELIGHT</strong>
+                    <span>/</span>
+                    <span>ARENAKIT</span>
+                </div>
+
+                <a
+                    class="topbar-link"
+                    href="https://github.com/Limelight-Dead-as-Disco-Modding/LimelightArenaKit"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    VIEW ON GITHUB
+                </a>
+            </header>
+
+            <main
+                id="main-content"
+                class="documentation-page">
+                <div class="breadcrumbs">
+                    <a href="index.html">DOCUMENTATION</a>
+                    <span>/</span>
+                    <span>ARENAKIT</span>
+                </div>
+
+                <header class="documentation-hero">
+                    <span class="eyebrow">YOUR ARENAS. YOUR STAGE.</span>
+
+                    <h1>ARENA MODS ARE BACK</h1>
+
+                    <p>
+                        Limelight ArenaKit is a visual authoring, compatibility,
+                        building and packaging toolkit for custom
+                        <em>Dead as Disco</em> arenas.
+                    </p>
+                </header>
+
+                <div class="article-layout">
+                    <article class="article">
+                        <section
+                            id="what-is-arenakit"
+                            class="guide-section">
+                            <h2>What ArenaKit Is</h2>
+
+                            <p>
+                                Arena modding stopped working as the game and its
+                                Unreal content changed. ArenaKit restores a current,
+                                repeatable route for creating a new arena or bringing
+                                an older editable arena project forward.
+                            </p>
+
+                            <p>
+                                The app opens the included authoring project, runs the
+                                official Unreal tools, checks the result and produces
+                                the complete arena package expected by the game.
+                            </p>
+
+                            <div class="notice">
+                                <strong>ARENAKIT IS NOT AN SDK</strong>
+
+                                <p>
+                                    ArenaKit does not contain private game code,
+                                    extracted game assets or Unreal Engine. It is an
+                                    authoring and compatibility toolkit built around a
+                                    clean project and the public Epic Games Launcher
+                                    version of Unreal Engine 5.7.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section
+                            id="requirements"
+                            class="guide-section">
+                            <h2>Before You Begin</h2>
+
+                            <ul class="guide-list">
+                                <li>Windows 10 or Windows 11, 64-bit</li>
+                                <li>A legal copy of <em>Dead as Disco</em></li>
+                                <li>Epic Games Launcher</li>
+                                <li>Unreal Engine 5.7 installed through the Launcher</li>
+                                <li>Around 40 GB of free space before installing Unreal Engine</li>
+                            </ul>
+
+                            <p>
+                                The Unreal installation itself is roughly 27 GB. You
+                                do not need Unreal Engine source code, an Epic-linked
+                                GitHub account, Visual Studio or a 300–400 GB custom
+                                editor build.
+                            </p>
+
+                            <div class="notice notice-warning">
+                                <strong>KEEP THE RELEASE TOGETHER</strong>
+
+                                <p>
+                                    Extract the complete ArenaKit ZIP into a normal
+                                    writable folder. Do not run the app from inside the
+                                    ZIP and do not move only
+                                    <span class="inline-code">LimelightArenaKit.exe</span>.
+                                    The Project, Scripts, Docs and Compatibility folders
+                                    must remain beside it.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section
+                            id="install"
+                            class="guide-section">
+                            <h2>Install and Connect ArenaKit</h2>
+
+                            <div class="step-list">
+                                <div class="guide-step">
+                                    <span class="step-number">01</span>
+
+                                    <div>
+                                        <h3>Download the current release</h3>
+
+                                        <p>
+                                            Download ArenaKit from the official GitHub
+                                            Releases page and extract the whole ZIP.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">02</span>
+
+                                    <div>
+                                        <h3>Install Unreal Engine 5.7</h3>
+
+                                        <p>
+                                            In Epic Games Launcher, open the Unreal
+                                            Engine Library and install Unreal Engine 5.7.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">03</span>
+
+                                    <div>
+                                        <h3>Open ArenaKit</h3>
+
+                                        <p>
+                                            Run
+                                            <span class="inline-code">LimelightArenaKit.exe</span>
+                                            and select <strong>Find UE 5.7</strong>.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">04</span>
+
+                                    <div>
+                                        <h3>Connect the game</h3>
+
+                                        <p>
+                                            Choose the main <em>Dead as Disco</em>
+                                            directory containing
+                                            <span class="inline-code">Pagoda.exe</span>
+                                            and the Pagoda folder.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a
+                                class="next-page-card"
+                                href="https://github.com/Limelight-Dead-as-Disco-Modding/LimelightArenaKit/releases/latest"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                <span>
+                                    <small>OFFICIAL DOWNLOAD</small>
+                                    <strong>Open the latest ArenaKit release</strong>
+                                </span>
+
+                                <span class="next-page-arrow" aria-hidden="true">→</span>
+                            </a>
+                        </section>
+
+                        <section
+                            id="new-arena"
+                            class="guide-section">
+                            <h2>Create a New Arena</h2>
+
+                            <div class="step-list">
+                                <div class="guide-step">
+                                    <span class="step-number">01</span>
+
+                                    <div>
+                                        <h3>Reset to the starter</h3>
+
+                                        <p>
+                                            Select <strong>Reset to Starter</strong>.
+                                            ArenaKit backs up the current working map
+                                            before creating a clean playable template.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">02</span>
+
+                                    <div>
+                                        <h3>Open the editor</h3>
+
+                                        <p>
+                                            Select <strong>Open Editor</strong>. Replace
+                                            actors marked <strong>[REPLACE]</strong> and
+                                            keep or resize the gameplay actors marked
+                                            <strong>[KEEP]</strong>.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">03</span>
+
+                                    <div>
+                                        <h3>Save and close Unreal</h3>
+
+                                        <p>
+                                            Save every mesh, material, texture, light,
+                                            effect and level change, then close Unreal
+                                            Editor before building.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="guide-step">
+                                    <span class="step-number">04</span>
+
+                                    <div>
+                                        <h3>Build the arena</h3>
+
+                                        <p>
+                                            Select <strong>Build Only</strong> to create
+                                            a checked package or
+                                            <strong>Build + Install</strong> to also copy
+                                            it into the connected game.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section
+                            id="starter"
+                            class="guide-section">
+                            <h2>The Playable Starter</h2>
+
+                            <p>
+                                The starter is more than an empty floor. It provides
+                                the gameplay structure a working arena needs:
+                            </p>
+
+                            <ul class="guide-list">
+                                <li>A safe Player Start</li>
+                                <li>Enemy navigation and reachable spawn space</li>
+                                <li>Blocking side boundaries</li>
+                                <li>A launch-safety ceiling</li>
+                                <li>Fall protection and a safe Kill Z</li>
+                                <li>Preview lighting and atmosphere</li>
+                                <li>A generated Recast NavMesh</li>
+                            </ul>
+
+                            <div class="notice notice-warning">
+                                <strong>THE MAP LOADS, BUT NO ENEMIES APPEAR</strong>
+
+                                <p>
+                                    This normally means the floor has no usable
+                                    collision or the NavMesh cannot reach the enemy
+                                    spawn area. In Unreal Editor, show navigation and
+                                    confirm that the playable floor is covered by
+                                    reachable navigation before rebuilding.
+                                </p>
+                            </div>
+
+                            <p>
+                                The default replacement path is
+                                <span class="inline-code">/Game/Pagoda/Levels/Arenas/Default/LI_Arena_Default</span>.
+                                Do not rename or move the working map unless a future
+                                ArenaKit compatibility profile specifically supports a
+                                different target.
+                            </p>
+                        </section>
+
+                        <section
+                            id="legacy-patcher"
+                            class="guide-section">
+                            <h2>Patch an Older Arena</h2>
+
+                            <p>
+                                If you still have an older editable
+                                <span class="inline-code">.uproject</span>, open the
+                                <strong>Legacy Patcher</strong>. ArenaKit copies the
+                                project into its own working area, repairs known
+                                outdated editor references and rebuilds it through the
+                                current pipeline.
+                            </p>
+
+                            <p>
+                                The original project remains untouched. Keep that
+                                original as your permanent backup even after a
+                                successful patch.
+                            </p>
+
+                            <div class="notice notice-warning">
+                                <strong>A COOKED PAK IS NOT THE ORIGINAL PROJECT</strong>
+
+                                <p>
+                                    Cooking removes editor information. ArenaKit cannot
+                                    promise to reconstruct a complete editable project
+                                    when the only surviving copy is a cooked
+                                    <span class="inline-code">.pak</span>.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section
+                            id="build-output"
+                            class="guide-section">
+                            <h2>Build Output and Installation</h2>
+
+                            <p>A finished ArenaKit build contains:</p>
+
+                            <div class="code-block">YourArena_P.pak
+YourArena_P.utoc
+YourArena_P.ucas
+LimelightArenaKit.json</div>
+
+                            <p>
+                                The game uses the three container files. ArenaKit
+                                creates the JSON automatically so the build can be
+                                identified and managed. You never need to write the
+                                ArenaKit JSON by hand.
+                            </p>
+
+                            <p>For manual installation, use:</p>
+
+                            <div class="code-block">Dead as Disco\Pagoda\Content\Paks\~mods</div>
+
+                            <div class="notice">
+                                <strong>ONE REPLACEMENT AT A TIME</strong>
+
+                                <p>
+                                    Only enable one mod that replaces the same arena.
+                                    Two packages targeting
+                                    <span class="inline-code">LI_Arena_Default</span>
+                                    will conflict, and whichever package wins the load
+                                    order may not be the one you expected.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section
+                            id="security"
+                            class="guide-section">
+                            <h2>Security Scanner Warnings</h2>
+
+                            <p>
+                                ArenaKit is currently an unsigned community tool. It
+                                launches PowerShell and official Unreal utilities to
+                                cook and package arenas. Behaviour-based security
+                                scanners may flag those actions even when they do not
+                                report a named malware detection.
+                            </p>
+
+                            <ul class="guide-list">
+                                <li>Download releases only from the official repository.</li>
+                                <li>Compare the ZIP checksum with the published release notes.</li>
+                                <li>Keep the app and scripts together in a normal extracted folder.</li>
+                                <li>Review the public source before running it if you are unsure.</li>
+                            </ul>
+
+                            <p>
+                                The SHA-256 for the official v0.1.0 Windows ZIP is:
+                            </p>
+
+                            <div class="code-block">21AA8EE7ECF6B77BF0D5D4E4CF90DB20777F8E9AC6CD7EDE72362F331D1A31D3</div>
+                        </section>
+
+                        <section
+                            id="support"
+                            class="guide-section">
+                            <h2>Getting Help</h2>
+
+                            <p>
+                                When reporting a problem, include the ArenaKit version,
+                                Unreal Engine version, game build, exact steps and the
+                                relevant part of the activity log. Start with the first
+                                real error rather than only the final exit-code message.
+                            </p>
+
+                            <a
+                                class="next-page-card"
+                                href="https://github.com/Limelight-Dead-as-Disco-Modding/LimelightArenaKit/issues"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                <span>
+                                    <small>ARENAKIT SUPPORT</small>
+                                    <strong>Open the ArenaKit issue tracker</strong>
+                                </span>
+
+                                <span class="next-page-arrow" aria-hidden="true">→</span>
+                            </a>
+                        </section>
+                    </article>
+
+                    <aside
+                        class="table-of-contents"
+                        aria-label="On this page">
+                        <strong>ON THIS PAGE</strong>
+
+                        <a href="#what-is-arenakit">What ArenaKit Is</a>
+                        <a href="#requirements">Before You Begin</a>
+                        <a href="#install">Install ArenaKit</a>
+                        <a href="#new-arena">Create an Arena</a>
+                        <a href="#starter">Playable Starter</a>
+                        <a href="#legacy-patcher">Legacy Patcher</a>
+                        <a href="#build-output">Build Output</a>
+                        <a href="#security">Security Warnings</a>
+                        <a href="#support">Getting Help</a>
+                    </aside>
+                </div>
+            </main>
+
+            <footer class="site-footer">
+                <div>
+                    <strong>LIMELIGHT</strong>
+                    <span>Made by Henreh</span>
+                </div>
+
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="credits.html">Credits</a>
+                    <a href="troubleshooting.html">Support</a>
+                    <a href="https://github.com/Henreh1" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
