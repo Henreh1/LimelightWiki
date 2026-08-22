@@ -9,7 +9,7 @@
 
     <meta
         name="description"
-        content="The development journey from Limelight mod manager to the native bridge, Live Loader, X19 and LimelightMP.">
+        content="The development journey from Limelight mod manager to the native bridge, Live Loader, X19, LimelightMP and ArenaKit.">
 
     <title>Development Journey | Limelight Documentation</title>
 
@@ -189,12 +189,13 @@
                 <header class="documentation-hero">
                     <span class="eyebrow">BEHIND THE CURTAIN</span>
 
-                    <h1>FROM MOD MANAGER TO MULTIPLAYER</h1>
+                    <h1>FROM MOD MANAGER TO A MODDING FAMILY</h1>
 
                     <p>
                         Limelight did not begin with a plan for runtime model
-                        swapping or online co-op. Each part of the family grew
-                        from one question: what if I could make this work too?
+                        swapping, online co-op or restoring arena creation.
+                        Each part of the family grew from one question: what if
+                        I could make this work too?
                     </p>
 
                     <div class="journey-intro" aria-label="Journey summary">
@@ -657,6 +658,164 @@
                         </section>
 
                         <section
+                            id="arenakit"
+                            class="guide-section">
+                            <span class="journey-date">
+                                <time datetime="2026-08-22">22 AUGUST 2026</time>
+                            </span>
+
+                            <h2>Arena Modding Was Broken, So ArenaKit Joined the Family</h2>
+
+                            <blockquote class="journey-quote">
+                                <p>
+                                    Arena modding stopped working in
+                                    <em>Dead as Disco</em>, so we brought it back.
+                                </p>
+
+                                <cite>LIMELIGHT ARENAKIT</cite>
+                            </blockquote>
+
+                            <p>
+                                Custom arenas had worked before, but the old route
+                                had quietly fallen apart as the game and Unreal
+                                changed underneath it. The remaining guide described
+                                an older setup, old starter packages now crashed and
+                                nobody had a current SDK or maintained editor project
+                                to fall back on.
+                            </p>
+
+                            <p>
+                                The investigation began with whatever the community
+                                still had: the outdated guide, current cooked game
+                                packages, an older cooked arena known to have worked
+                                on 6 May 2026 and a lot of crash reports. FModel made
+                                it possible to inspect package properties and confirm
+                                that static mesh components, volumes and other level
+                                data had changed, but it could not turn cooked content
+                                back into the project that originally created it.
+                            </p>
+
+                            <div class="notice notice-warning">
+                                <strong>COOKED IS NOT EDITABLE</strong>
+
+                                <p>
+                                    A <code>.pak</code> can preserve enough for the
+                                    game to load an arena, but cooking strips away a
+                                    lot of the editor information. The real breakthrough
+                                    needed an older editable <code>.uproject</code>, not
+                                    just another extracted <code>.umap</code>.
+                                </p>
+                            </div>
+
+                            <p>
+                                The first replacement map was deliberately simple: a
+                                floor, walls, lighting and a player start. It loaded
+                                instead of crashing. The HUD appeared, the player
+                                spawned and the game entered the arena route correctly.
+                                It looked like a giant smoke test because that is
+                                exactly what it was.
+                            </p>
+
+                            <div class="journey-answer">
+                                <div>
+                                    <strong>The map loaded</strong>
+                                    <p>
+                                        The replacement path, Unreal version and
+                                        container packaging were finally correct.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <strong>No enemies spawned</strong>
+                                    <p>
+                                        Loading was only half the problem. Collision,
+                                        reachable navigation and current gameplay
+                                        volumes still had to be rebuilt.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p>
+                                That blank arena answered the packaging question but
+                                exposed the gameplay one. <em>Dead as Disco</em> chooses
+                                enemy positions from reachable navigation. Without a
+                                working floor, NavMesh bounds and safe spawn space, a
+                                level can load perfectly and still remain completely
+                                empty.
+                            </p>
+
+                            <p>
+                                A preserved editable arena project finally supplied
+                                the missing comparison. Once its outdated references
+                                and components were carried into the current Unreal
+                                pipeline, the arena loaded with its gameplay intact.
+                                Enemies spawned, the fight ran and the old project had
+                                survived without altering the original. That was the
+                                moment arena modding stopped being a theory again.
+                            </p>
+
+                            <h3>Turning the proof into something everyone could use</h3>
+
+                            <p>
+                                A collection of one-off scripts would have solved the
+                                problem for one machine. ArenaKit turned the discovery
+                                into the same sort of visual workflow as Limelight:
+                                find the correct editor, create or patch an arena,
+                                build it, check it and put it on stage.
+                            </p>
+
+                            <ul class="guide-list">
+                                <li>
+                                    <strong>A proper starter:</strong> Player Start,
+                                    enemy navigation and spawn space, boundaries,
+                                    launch protection, fall protection and preview
+                                    lighting are already in place.
+                                </li>
+
+                                <li>
+                                    <strong>A current build route:</strong> ArenaKit
+                                    uses the Epic Games Launcher version of Unreal
+                                    Engine 5.7 instead of demanding a 300–400 GB source
+                                    build or an Epic-linked GitHub account.
+                                </li>
+
+                                <li>
+                                    <strong>A Legacy Patcher:</strong> older editable
+                                    arena projects are copied into ArenaKit, repaired
+                                    and rebuilt while the originals remain untouched.
+                                </li>
+
+                                <li>
+                                    <strong>A complete package:</strong> the app cooks,
+                                    validates and creates the matching
+                                    <code>.pak</code>, <code>.utoc</code>,
+                                    <code>.ucas</code>, ArenaKit JSON and shareable ZIP.
+                                </li>
+                            </ul>
+
+                            <p>
+                                ArenaKit became the newest member of the family because
+                                it followed the same rule as everything before it:
+                                hide the awkward technical work without hiding what the
+                                tool is actually doing. The first public release,
+                                <strong>v0.1.0</strong>, went live on the same day.
+                            </p>
+
+                            <a
+                                class="next-page-card"
+                                href="https://github.com/Limelight-Dead-as-Disco-Modding/LimelightArenaKit/releases/tag/v0.1.0"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                <span>
+                                    <small>ARENA MODS ARE BACK</small>
+                                    <strong>Open the first ArenaKit release</strong>
+                                </span>
+
+                                <span class="next-page-arrow" aria-hidden="true">→</span>
+                            </a>
+                        </section>
+
+                        <section
                             id="next"
                             class="guide-section">
                             <h2>Whatever Joins the Family Next</h2>
@@ -667,14 +826,15 @@
                                 launch modes. Runtime switching needed a native bridge.
                                 A reliable Live Loader made X19 possible. Local co-op
                                 and remote input eventually gave Chuckles a way onto
-                                another PC.
+                                another PC. When arena modding stopped working,
+                                ArenaKit carried the family back into Unreal authoring.
                             </p>
 
                             <p>
                                 The next steps are broader replacement support, a more
-                                resilient Live Loader, localisation, continued
-                                LimelightMP experiments and whatever questionable idea
-                                wanders backstage next.
+                                resilient Live Loader, continued ArenaKit compatibility,
+                                localisation, continued LimelightMP experiments and
+                                whatever questionable idea wanders backstage next.
                             </p>
 
                             <a
@@ -702,6 +862,7 @@
                         <a href="#x19">X19 Loader Mode</a>
                         <a href="#limelightmp">The LimelightMP Journey</a>
                         <a href="#today">Two Local Games</a>
+                        <a href="#arenakit">ArenaKit Joins the Family</a>
                         <a href="#next">What Comes Next</a>
                     </aside>
                 </div>
